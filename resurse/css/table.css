@@ -15,7 +15,7 @@
     
     caption-side: bottom;
     display: block;
-    width: 700px;
+    width: max-content;
     border-spacing: 0;
     text-align: center;
 

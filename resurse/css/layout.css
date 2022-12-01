@@ -317,7 +317,7 @@ video::cue{
     text-shadow: var(--culoare-border-link-top-hover) 1px 0 5px;
 }
 
-#grid-pagina section{
+#grid-pagina > section{
     padding: 1rem;
     margin: 0 auto;
     text-align: justify;
@@ -347,11 +347,21 @@ video::cue{
         transition: font-size 0.5s linear;
     }
 
+    #link-top{
+        transform: scale(85%) rotate(45deg);
+        right: 30px;
+        bottom: 30px;
+    }
+
 }
 
 @media screen and (max-width: 750px) {
     #grid-pagina{
         display: block;
+    }
+
+    #link-top{
+        transform: scale(75%) rotate(45deg);
     }
 
     #grid-pagina section {

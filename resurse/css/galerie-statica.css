@@ -149,4 +149,12 @@
     display: block;
     width: 80%;
   }
+
+  #grid-galerie img:hover {
+    transition: none;
+    transition: none;
+    transform: none;
+    outline: none;
+    box-shadow: none;
+  }
 }/*# sourceMappingURL=galerie-statica.css.map */
