@@ -1,0 +1,32 @@
+.img-prez {
+    height: 220px;
+}
+
+#cat-img {
+    height: 35px;
+}
+
+#prez-vizuala {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#prez-vizuala .imagini {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@media screen and (max-width:750px) {
+    .img-prez {
+        display: none;
+    }
+
+    #bookshelf-img {
+        display: block;
+    }
+
+}

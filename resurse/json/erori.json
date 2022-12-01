@@ -1,0 +1,41 @@
+{
+    "cale_baza": "resurse/imagini/erori",
+    "eroare_default":{
+        "titlu":"Eroare !!!",
+        "text": "A survenit eroare.",
+        "imagine":"interzis.png"
+    },
+    "info_erori": [
+        {
+            "identificator":404,
+            "status":true,
+            "titlu":"Eroare 404",
+            "text": "Pagina nu a fost găsită!",
+            "imagine":"not_found.png"
+        },
+        {
+            "identificator":403,
+            "status":true,
+            "titlu":"Accesul interzis!",
+            "text": "Nu puteți accesa această resursă!",
+            "imagine":"access_denied.png"
+        },
+        
+        {
+            "identificator":1,
+            "status":false,
+            "titlu":"Site în lucru",
+            "text": "Se lucrează la această pagină!",
+            "imagine":"work_in_progress.png"
+        },
+        
+        {
+            "identificator":2,
+            "status":false,
+            "titlu":"Eroare bază date",
+            "text": "Încercați mai târziu!",
+            "imagine":"database.png"
+        }
+    ]
+}
+  

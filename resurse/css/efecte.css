@@ -1,0 +1,83 @@
+::selection {
+    color: var(--culoare-selection-text);
+    background-color: var(--culoare-selection-background);
+}
+
+
+#stilizare-hr {
+    border: none;
+    position: relative;
+    width: 60%;
+    height: var(--dimensiune-hr);
+    background-color: var(--culoare-hr-background);
+    box-shadow: 0 0 10px var(--culoare-hr-background);
+    background-image: radial-gradient(
+        var(--culoare-hr-linie) 0%,
+        var(--culoare-hr-linie) 50%,
+        transparent 100%
+     );
+    background-repeat: space;
+    background-size: var(--dimensiune-hr) var(--dimensiune-hr);
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+}
+
+#stilizare-hr::before{
+    content: "";
+    position: absolute;
+    display: block;
+    background-image: url('/resurse/imagini/icon-hr3.png');
+    width: 3rem;
+    height: 3rem;
+    background-size: 3rem;
+} 
+
+.sectiune-despre {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#par-col {
+    column-count: 3;
+    column-fill: balance;
+    /* column-rule:  6px dotted var(--culoare-hr-background); */
+    column-rule:  2px solid var(--culoare-hr-background);
+    column-gap: 7%;
+    text-align: justify;
+    padding: 2rem;
+}
+
+/******* REFLEXIE  *******/
+#text {
+    width: max-content;
+    position: relative;
+    transform: skewY(-15deg);
+    font-size: 1.5rem;
+    transition: color 0.5s linear;
+}
+
+#text-reflectat {
+    position: absolute;
+    left: 100%;
+    transform: skewY(30deg) rotateY(180deg) translate(-10px, -17px);
+}
+
+#text:hover{
+    color: var(--culoare-reflexie);
+}
+
+
+
+@media screen and (max-width: 750px) {
+    #par-col{
+        column-count: 1;
+    }
+
+    #stilizare-hr{
+        width: 70%;
+    }
+}

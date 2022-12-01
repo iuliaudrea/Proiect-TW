@@ -1,0 +1,370 @@
+b, i{
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+  *:before,
+  *:after {
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+
+a {
+    text-decoration: none;
+}
+
+header h1{
+    display: none;
+}
+
+body{
+    --culoare-text: #000;
+    --culoare-footer: #435360;
+    --culoare-text-footer: #F2F5EA;
+    --culoare-header: #F2F5EA;
+    --culoare-bg: #fafbf7;
+    --culoare-bg-noutati: #F3F5F6;
+
+    --culoare-border-link-top: #D9DBD3;
+    --culoare-bg-link-top: #FFF;
+    --culoare-bg-sageata: #747571;
+    
+    --culoare-sageata-hover: #6C373D;
+    --culoare-link-top-hover: #EAD6D8; 
+    --culoare-border-link-top-hover:#C2878D;
+
+    --culoare-circle: #D9DBD3;
+    --culoare-icon-circle: #435360;
+
+    --culoare-h: #435360;
+    --culoare-icons-h: #C2878D;
+    --culoare-quote: black;
+
+    
+    --culoare-quote-line: #EAD6D8;
+    --culoare-subtitrari: #6C373D;
+    --culoare-fundal-subtitrari: white;
+
+    --culoare-selection-background: #EAD6D8;
+    --culoare-selection-text: #6C373D;
+
+    --culoare-galerie-shadow: #435360;
+    --culoare-galerie-margin: #D9DBD3;
+
+    --culoare-reflexie: #C2878D;
+    --culoare-link-galerie: #747571;
+
+    --culoare-hr-background: #D9DBD3;
+    --culoare-hr-linie: white;
+    --dimensiune-hr: 12px;
+
+
+    background-color: var(--culoare-bg);
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    z-index: 15px;
+}
+
+
+html {
+    font-size: 17px;
+    font-family: 'Lora', serif;
+    color: var(--culoare-text);
+}
+
+h1,h2,h3 {
+    font-family: 'Lora', serif;
+    color: var(--culoare-h);
+    margin: 1rem 0;
+
+}
+
+h3 .fa-solid{
+    color: var(--culoare-icons-h);
+}
+
+section h3, h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#link-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--culoare-bg-link-top);
+    border: 3px solid var(--culoare-border-link-top);
+    transform: rotate(45deg);
+    opacity: 30%;
+    transition: all 0.3s linear;
+}
+
+#link-top:hover {
+    opacity: 1;
+    border-color: var(--culoare-border-link-top-hover);
+    background-color: var(--culoare-link-top-hover);
+}
+
+#link-top:hover #footer-sageata{
+    border-bottom-color: var(--culoare-sageata-hover);
+}
+
+#footer-sageata {
+    transform: rotate(-45deg);
+    border-top: none;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 30px solid var(--culoare-bg-sageata);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+
+
+header{
+    background-color: var(--culoare-header);
+}
+
+#logo {
+    height: 140px;
+    margin: auto;
+    display: block;
+}
+
+
+#grid-pagina section {
+    margin-bottom: 0px;
+    padding: 10px 0;
+}
+
+/* #grid-pagina > section {
+    border: 1px solid black;
+} */
+
+#grid-pagina{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "z-prezentare z-prezentare z-prezentare z-prezentare"
+        "z-sectiunea8 z-sectiunea8 z-sectiunea8 z-sectiunea8"
+        "z-calendar z-tabel z-tabel z-anunturi"
+        "z-util-online z-statistici z-date-site z-date-site";
+}
+
+#prezentare{
+    grid-area: z-prezentare;
+}
+
+#prezentare h2 {
+    margin-top: 0;
+}
+
+#sectiunea8{
+    grid-area: z-sectiunea8;
+}
+
+#calendar{
+    grid-area: z-calendar;
+}
+
+#tabel{
+    grid-area: z-tabel;
+}
+
+#anunturi{
+    grid-area: z-anunturi;
+}
+
+#util-online{
+    grid-area: z-util-online;
+}
+
+#statistici{
+    grid-area: z-statistici;
+}
+
+#date-site{
+    grid-area: z-date-site;
+}
+
+#noutati {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#poze-manuale {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+#poze-manuale figcaption {
+    max-width: fit-content;
+}
+
+#noutati img {
+    height: 300px;
+}
+
+#sectiunea8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#sectiunea8 section {
+    width: 100%;
+}
+
+
+#recomandari {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#poza-recomandare {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#poza-recomandare p {
+    max-width: 700px;
+    text-align: justify;
+}
+
+
+footer{
+    height: 90px;
+    background-color: var(--culoare-footer);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer * {
+    color: var(--culoare-text-footer);
+}
+
+footer a:hover{
+    color: var(--culoare-text-footer);
+}
+
+#footer-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* #########    EVENIMENTE     ######## */
+
+#evenim-trecute-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+#container-evenim{
+    padding: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+
+
+
+section h3, h2{
+    text-align: center;
+}
+
+
+/* ####### stilizare VTT ###### */
+video::cue{
+    background: var(--culoare-fundal-subtitrari);
+    color:var(--culoare-subtitrari);
+    text-shadow: var(--culoare-border-link-top-hover) 1px 0 5px;
+}
+
+#grid-pagina section{
+    padding: 1rem;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+
+
+@media screen and (max-width:1500px) {
+    #grid-pagina{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "z-prezentare z-prezentare"
+            "z-sectiunea8 z-sectiunea8"
+            "z-calendar z-anunturi"
+            "z-tabel z-tabel"
+            "z-util-online z-statistici"
+            "z-date-site z-date-site";
+    }
+
+    #formula, #nou-intreb{
+        display: none;
+    }
+
+    html {
+        font-size: 0.95rem;
+        transition: font-size 0.5s linear;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+    #grid-pagina{
+        display: block;
+    }
+
+    #grid-pagina section {
+        width: 90%;
+    }
+
+    html {
+        font-size: 0.9rem;
+        transition: font-size 0.5s linear;
+    }
+
+}
+
+#banner, #watermark{
+    display: none;
+}

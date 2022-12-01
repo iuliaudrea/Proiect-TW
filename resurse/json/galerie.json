@@ -1,0 +1,285 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+        {
+            "cale_imagine":"imagine-1(1).png",
+            "titlu":"Statuie în librărie",
+            "descriere":"Statuie în librărie",
+            "sfert_ora":"1",
+            "autor": "Sonse",
+            "link_autor": "https://www.flickr.com/people/34585612@N00",
+            "cc": "CC-BY",
+            "link_cc": "https://creativecommons.org/licenses/by/2.0/"
+        },
+        {
+            "cale_imagine":"imagine-1(2).png",
+            "titlu":"Carte deschisă",
+            "descriere":"Carte deschisă",
+            "sfert_ora":"1",
+            "autor": "Nenad Sojkovic",
+            "link_autor": "https://www.flickr.com/photos/nenadstojkovic/",
+            "cc": "CC-BY",
+            "link_cc": "https://creativecommons.org/licenses/by/2.0/"
+        },
+        {
+            "cale_imagine":"imagine-1(3).png",
+            "titlu":"Biblioteca unei facultăți",
+            "descriere":"Biblioteca unei facultăți",
+            "sfert_ora":"1",
+            "autor": "Tony Webster",
+            "link_autor": "https://www.flickr.com/photos/87296837@N00",
+            "cc": "CC-BY",
+            "link_cc": "https://creativecommons.org/licenses/by/2.0/?ref=openverse"
+        },
+        {
+            "cale_imagine":"imagine-1(4).png",
+            "titlu":"Dicționar",
+            "descriere":"Dicționar",
+            "sfert_ora":"1",
+            "autor": "ieuz",
+            "link_autor": "https://www.flickr.com/photos/81243290@N00",
+            "cc": "CC-BY",
+            "link_cc": "https://creativecommons.org/licenses/by/2.0/?ref=openverse"
+        },
+        {
+            "cale_imagine":"imagine-1(5).png",
+            "titlu":"Rafturi cu cărți vechi",
+            "descriere":"Rafturi cu cărți vechi",
+            "sfert_ora":"1",
+            "autor": "lungstruck",
+            "link_autor": "https://www.flickr.com/photos/52195472@N00",
+            "cc": "CC-BY",
+            "link_cc": "https://creativecommons.org/licenses/by/2.0/?ref=openverse"
+        },
+        {
+            "cale_imagine":"imagine-1(6).png",
+            "titlu":"Cărți vechi",
+            "descriere":"Cărți vechi",
+            "sfert_ora":"1",
+            "autor": "Ben Gallangher",
+            "link_autor": "https://www.flickr.com/photos/26848985@N02",
+            "cc": "CC-BY",
+            "link_cc": "https://creativecommons.org/licenses/by/2.0/"
+        },
+        {
+            "cale_imagine":"imagine-1(7).png",
+            "titlu":"Colecții de cărți",
+            "descriere":"Colecții de cărți",
+            "sfert_ora":"1",
+            "autor": "Barta IV",
+            "link_autor": "https://www.flickr.com/photos/98640399@N08/",
+            "cc": "CC-BY",
+            "link_cc": "https://creativecommons.org/licenses/by/2.0/"
+        },
+        {
+            "cale_imagine":"imagine-1(8).png",
+            "titlu":"Statuie în librărie",
+            "descriere":"Statuie în librărie",
+            "sfert_ora":"1",
+            "autor": "Mike Kniec",
+            "link_autor": "https://www.flickr.com/photos/112923805@N05/",
+            "cc": "CC-BY",
+            "link_cc": "https://creativecommons.org/licenses/by/2.0/"
+        },
+        {
+            "cale_imagine":"imagine-1(9).png",
+            "titlu":"Scară printre cărți",
+            "descriere":"Scară printre cărți",
+            "sfert_ora":"1",
+            "autor": "Can Pac Swire",
+            "link_autor": "https://www.flickr.com/photos/18378305@N00",
+            "cc": "CC-BY-NC",
+            "link_cc": "https://creativecommons.org/licenses/by-nc/2.0/"
+        },
+        {
+            "cale_imagine":"imagine-1(10).png",
+            "titlu":"Bibliotecă modernă",
+            "descriere":"Bibliotecă modernă",
+            "sfert_ora":"1",
+            "autor": "Lauren Manning",
+            "link_autor": "https://www.flickr.com/photos/laurenmanning/",
+            "cc": "CC-BY",
+            "link_cc": "https://creativecommons.org/licenses/by/2.0/"
+        },
+        {
+            "cale_imagine":"imagine-2(1).png",
+            "titlu":"Statui într-o bibliotecă",
+            "descriere":"Statui într-o bibliotecă",
+            "sfert_ora":"2"
+        },
+        {
+            "cale_imagine":"imagine-2(2).png",
+            "titlu":"Arcada unei librării",
+            "descriere":"Arcada unei librării",
+            "sfert_ora":"2"
+        },
+        {
+            "cale_imagine":"imagine-2(3).png",
+            "titlu":"Coloane într-o bibliotecă",
+            "descriere":"Coloane într-o bibliotecă",
+            "sfert_ora":"2"
+        },
+        {
+            "cale_imagine":"imagine-2(4).png",
+            "titlu":"Text în germană",
+            "descriere":"Text în germană",
+            "sfert_ora":"2"
+        },
+        {
+            "cale_imagine":"imagine-2(5).png",
+            "titlu":"Colecție de cărți",
+            "descriere":"Colecție de cărți",
+            "sfert_ora":"2"
+        },
+        {
+            "cale_imagine":"imagine-2(6).png",
+            "titlu":"Cărți luminate",
+            "descriere":"Cărți luminate",
+            "sfert_ora":"2"
+        },
+        {
+            "cale_imagine":"imagine-2(7).png",
+            "titlu":"Coperta unei cărți vechi",
+            "descriere":"Coperta unei cărți vechi",
+            "sfert_ora":"2"
+        },
+        {
+            "cale_imagine":"imagine-2(8).png",
+            "titlu":"Scară bibliotecă",
+            "descriere":"Scară bibliotecă",
+            "sfert_ora":"2"
+        },
+        {
+            "cale_imagine":"imagine-2(9).png",
+            "titlu":"Rafturi cu cărți",
+            "descriere":"Rafturi cu cărți",
+            "sfert_ora":"2"
+        },
+        {
+            "cale_imagine":"imagine-2(10).png",
+            "titlu":"Bibliotecă frumoasă",
+            "descriere":"Bibliotecă frumoasă",
+            "sfert_ora":"2"
+        },
+        {
+            "cale_imagine":"imagine-3(1).png",
+            "titlu":"Carte de agricultură",
+            "descriere":"Carte de agricultură",
+            "sfert_ora":"3"
+        },
+        {
+            "cale_imagine":"imagine-3(2).png",
+            "titlu":"Pisică citind cărți",
+            "descriere":"Pisică citind cărți",
+            "sfert_ora":"3"
+        },
+        {
+            "cale_imagine":"imagine-3(3).png",
+            "titlu":"Bibliotecă modernă",
+            "descriere":"Bibliotecă modernă",
+            "sfert_ora":"3"
+        },
+        {
+            "cale_imagine":"imagine-3(4).png",
+            "titlu":"Tavanul unei biblioteci",
+            "descriere":"Tavanul unei biblioteci",
+            "sfert_ora":"3"
+        },
+        {
+            "cale_imagine":"imagine-3(5).png",
+            "titlu":"Pană de scris",
+            "descriere":"Pană de scris",
+            "sfert_ora":"3"
+        },
+        {
+            "cale_imagine":"imagine-3(6).png",
+            "titlu":"Rafturi cu cărți",
+            "descriere":"Rafturi cu cărți",
+            "sfert_ora":"3"
+        },
+        {
+            "cale_imagine":"imagine-3(7).png",
+            "titlu":"Cărți vechi",
+            "descriere":"Cărți vechi",
+            "sfert_ora":"3"
+        },
+        {
+            "cale_imagine":"imagine-3(8).png",
+            "titlu":"Ochelari de citit",
+            "descriere":"Ochelari de citit",
+            "sfert_ora":"3"
+        },
+        {
+            "cale_imagine":"imagine-3(9).png",
+            "titlu":"Bibliotecă într-un pod",
+            "descriere":"Bibliotecă într-un pod",
+            "sfert_ora":"3"
+        },
+        {
+            "cale_imagine":"imagine-3(10).png",
+            "titlu":"Carte de geografie",
+            "descriere":"Carte de geografie",
+            "sfert_ora":"3"
+        },
+        {
+            "cale_imagine":"imagine-4(1).png",
+            "titlu":"Bibliotecă frumoasă",
+            "descriere":"Bibliotecă frumoasă",
+            "sfert_ora":"4"
+        },
+        {
+            "cale_imagine":"imagine-4(2).png",
+            "titlu":"Morman de cărți",
+            "descriere":"Morman de cărți",
+            "sfert_ora":"4"
+        },
+        {
+            "cale_imagine":"imagine-4(3).png",
+            "titlu":"Bibliotecă ca la Hogwarts",
+            "descriere":"Bibliotecă ca la Hogwarts",
+            "sfert_ora":"4"
+        },
+        {
+            "cale_imagine":"imagine-4(4).png",
+            "titlu":"Harpă printre cărți",
+            "descriere":"Harpă printre cărți",
+            "sfert_ora":"4"
+        },
+        {
+            "cale_imagine":"imagine-4(5).png",
+            "titlu":"Bibliotecă renscentistă",
+            "descriere":"Bibliotecă renscentistă",
+            "sfert_ora":"4"
+        },
+        {
+            "cale_imagine":"imagine-4(6).png",
+            "titlu":"Loc de citit",
+            "descriere":"Loc de citit",
+            "sfert_ora":"4"
+        },
+        {
+            "cale_imagine":"imagine-4(7).png",
+            "titlu":"Scară bibliotecă",
+            "descriere":"Scară bibliotecă",
+            "sfert_ora":"4"
+        },
+        {
+            "cale_imagine":"imagine-4(8).png",
+            "titlu":"Ceas de buzunar",
+            "descriere":"Ceas de buzunar",
+            "sfert_ora":"4"
+        },
+        {
+            "cale_imagine":"imagine-4(9).png",
+            "titlu":"Scris caligrafic",
+            "descriere":"Scris caligrafic",
+            "sfert_ora":"4"
+        },
+        {
+            "cale_imagine":"imagine-4(10).png",
+            "titlu":"Cărte de colecție",
+            "descriere":"Cărte de colecție",
+            "sfert_ora":"4"
+        }
+	]
+}

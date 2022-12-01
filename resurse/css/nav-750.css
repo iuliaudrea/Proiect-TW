@@ -1,0 +1,94 @@
+nav {
+  height: var(--inaltime-meniu-mic);
+}
+
+#hamburger {
+  display: block;
+  height: var(--inaltime-meniu-mic);
+}
+
+#container-hamburger {
+  cursor: pointer;
+  width: var(--inaltime-meniu-mic);
+  height: var(--inaltime-meniu-mic);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 10px;
+}
+
+.hamburger-line {
+  height: 5px;
+  background-color: var(--culoare-burger);
+  border-radius: 2.5px;
+}
+
+#ch-menu:checked ~ ul.meniu {
+  display: block;
+}
+
+ul.meniu {
+  display: none;
+  -webkit-animation-name: animatie_meniu;
+          animation-name: animatie_meniu;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  transform-origin: 0 0;
+}
+ul.meniu > li > a::after {
+  background: none;
+}
+ul.meniu > li :hover > a::after {
+  background: none;
+}
+ul.meniu li {
+  height: var(--inaltime-meniu-mic);
+  line-height: var(--inaltime-meniu-mic);
+  width: 100% !important;
+}
+ul.meniu li > a {
+  height: 100%;
+}
+ul.meniu li:hover ul {
+  -webkit-animation: none;
+          animation: none;
+  transform: scale(1, 1);
+  opacity: 1;
+}
+ul.meniu a:hover {
+  -webkit-animation: none;
+          animation: none;
+  background-color: var(--culoare-meniu-contrast);
+  color: var(--culoare-text-meniu-contrast);
+}
+ul.meniu ul {
+  width: 100% !important;
+}
+
+@-webkit-keyframes animatie_meniu {
+  from {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes animatie_meniu {
+  from {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=nav-750.css.map */

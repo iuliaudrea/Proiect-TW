@@ -1,0 +1,42 @@
+
+#citat{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--culoare-quote);
+    quotes: none;
+    width: 50%;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+
+#citat img {
+    height: 30px;
+}
+
+#citat > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+#citat hr {
+    height: 4px;
+    width: calc(100% - 50px);
+    max-width: 90%;
+    border-radius: 10px;
+    background-color: var(--culoare-quote-line);
+    border: 0;
+}
+
+@media screen and (max-width:1500px) {
+    #citat {
+        width: 90%;
+    }
+}

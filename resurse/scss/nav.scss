@@ -1,0 +1,127 @@
+nav {
+    --inaltime-meniu: 50px;
+    --inaltime-meniu-mic: 30px;
+    --latime-buton: 180px;
+    --culoare-meniu: #F2F5EA;
+    --culoare-meniu-contrast: #D6DBD2;
+    --culoare-text-meniu: #435360;
+    --culoare-text-meniu-contrast: #fff;
+    --culoare-bara-gradient: #435360;
+    --culoare-burger: #435360;
+
+    height: var(--inaltime-meniu);
+    background-color: var(--culoare-meniu);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+#hamburger, #ch-menu, #icon-casuta{
+    display: none;
+}
+
+ul.meniu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: 'Old Standard TT', serif;
+
+    li{ 
+
+        background-color: var(--culoare-meniu);
+        cursor: pointer;
+
+        > a {
+            display: block;
+        }
+
+        a {
+            display: block;
+            color: var(--culoare-text-meniu);
+            transition: all 0.4s linear;
+        }
+
+        &:hover ul {
+            animation-name: animatie-submeniu;
+            animation-duration: 0.5s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            transform-origin: 50% 50%;
+            display: block;
+        }
+    }
+
+    > li{ 
+        position: relative;
+        height: var(--inaltime-meniu);
+        line-height: var(--inaltime-meniu);
+        width: var(--latime-buton);
+        text-align: center;
+        cursor: pointer;
+
+        > a::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: calc(0.2*var(--inaltime-meniu));
+            width: 100%;
+            border-radius: 5px;
+            background-image: linear-gradient(
+                to right,
+                var(--culoare-meniu) 0%,
+                var(--culoare-meniu) 50%,
+                var(--culoare-bara-gradient) 100%
+            );
+            background-size: 200%;
+            transition: all 0.5s linear;
+        }
+
+        &:hover > a::after{
+            background-position: 100%;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: var(--latime-buton);
+        position: relative;
+        z-index: 20;
+        display: none;
+
+        a:hover{
+            background-color: var(--culoare-meniu-contrast);
+            color: var(--culoare-text-meniu-contrast);
+        }
+    }
+}
+
+
+
+@keyframes animatie-submeniu {
+    0%{
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #icon-casuta {
+        display: inline;
+    }
+
+    #text-acasa{
+        display: none;
+    }
+}

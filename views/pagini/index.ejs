@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        
+        <title>Librăria Gaudeamus</title>
+        <meta name="keywords" content="produse, cărți, edituri, bestsellere, plată, livrare, comandă">
+        
+        <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+        <link rel="stylesheet" href="resurse/css/iframe.css">
+        <link rel="stylesheet" href="resurse/css/table.css">
+        <link rel="stylesheet" href="resurse/css/prezentare.css">
+        <link rel="stylesheet" href="resurse/css/img-prez.css">
+        <link rel="stylesheet" href="resurse/css/citat.css">
+        <link rel="stylesheet" href="resurse/css/details.css">
+
+        <%- include("../fragmente/head.ejs") %>
+
+    </head>
+
+    <body>
+        <%- include("../fragmente/header.ejs") %>
+        <p id="watermark"></p>
+        
+        <main>
+            <div id="grid-pagina">
+                <section id="prezentare">
+                    <h2>Bine ați venit la <b>Librăria Gaudeamus</b>!</h2>
+
+                    <div id="prez-vizuala">
+
+                        <div class="imagini">
+                            <img class="img-prez" id="welcome-img" src="resurse/svg/welcome.svg" alt="welcome">
+                            <img class="img-prez" id="bookshelf-img" src="resurse/svg/bookshelf.svg" alt="bookshelf">
+                            <img class="img-prez" id="cat-img" src="resurse/svg/cat.svg" alt="pisica-draguta">
+                        </div>
+
+                    </div>
+
+                    <div id="icons-prez">
+                        <div class="container-icons">
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-truck"></i>
+                            </div>
+                            <div class="text-icon">
+                                <b>Livrare</b> rapidă în 24H
+
+                                <div>Plasează <b>comanda</b> azi și maine vei primi <b>produsele</b>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-icons">
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-credit-card"></i>
+                            </div>
+                            <div class="text-icon">
+                                <b>Plată</b> online sau ramburs
+
+                                <div>Orice <b>comandă</b> achiziționată online beneficiază de 5% reducere 
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-icons">
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-book"></i>
+                            </div>
+                            <div class="text-icon">
+                                Gamă variată de cărți
+
+                                <div> <b>Bestsellere</b>, biografii, manuale de la o mulțime de <b> edituri</b>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                            
+
+                </section>
+
+                <div id="sectiunea8">
+
+                    <section id="noutati">
+                        <h3 id="titlu-noutati"> 
+                            <i class="fa-solid fa-bounce fa-exclamation"></i>
+                            <b>Noutăți</b>: <i>Back to school</i>
+                        </h3>
+                        
+                        <div id="formula">
+                            <math  xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mo>&int;</mo>
+                                    <mrow>
+                                        <mfrac>
+                                            <mrow>
+                                                <mi>x</mi>
+                                                <mo>+</mo>
+                                                <mn>1</mn>
+                                            </mrow>
+                                            <mrow>
+                                                <mi>x</mi>
+                                                <mo>+</mo>
+                                                <msqrt>
+                                                    <mrow>
+                                                        <msup>
+                                                            <mi>x</mi>
+                                                            <mn>2</mn>
+                                                        </msup> 
+                                                        <mo>+</mo>
+                                                        <mn>2</mn>
+                                                        <mi>x</mi>
+                                                        <mo>+</mo>
+                                                        <mn>2</mn>
+                                                    </mrow>
+                                                </msqrt>
+                                            </mrow>
+                                        </mfrac>
+                                        <mo>&dd;</mo>
+                                        <mi>x</mi>
+                                    </mrow>
+                                </mrow>
+                            </math>
+                        </div>
+
+                        <p id="nou-intreb"> Ești elev de liceu și vrei să afli cum se rezolvă această <i>integrală Riemann</i>? Îți recomandăm următoarele manuale și culegeri:</p>
+
+                        <div id="poze-manuale">
+                            <figure id="fig1">
+                                <picture>
+                                    <source srcset="resurse/imagini/man1-sm.jpg" media="(max-width:700px)"/>
+
+                                    <source srcset="resurse/imagini/man1-md.jpg" media="(max-width:1000px)"/>
+
+                                    <img src="resurse/imagini/man1-bg.jpg" alt="manual matematica clasa 11 m1">
+                                </picture>
+                                
+                                <figcaption>
+                                    <p>
+                                    Matematica clasa a XI-a. Breviar Teoretic M1 - Petre Simion
+                                    </p>
+                                    <ins>15 lei</ins> <s>18.50 lei</s> 
+                                </figcaption>
+                            </figure>
+
+                            <figure id="fig2">
+                                <picture>
+                                    <source srcset="resurse/imagini/man2-sm.jpg" media="(max-width:700px)"/>
+
+                                    <source srcset="resurse/imagini/man2-md.jpg" media="(max-width:1000px)"/>
+
+                                    <img src="resurse/imagini/man2-bg.jpg" alt="manual matematica clasa 11 tehnologic">
+                                </picture>
+
+                                <figcaption>
+                                    <p>
+                                    Matematica clasa a XI-a. Breviar Teoretic Tehnologic - Petre Simion
+                                    </p>
+                                    <ins>15 lei</ins> <s>18.50 lei</s> 
+                                </figcaption>
+                            </figure>
+
+                            <figure id="fig3">
+                                <picture>
+                                    <source srcset="resurse/imagini/man3-sm.jpg" media="(max-width:700px)"/>
+
+                                    <source srcset="resurse/imagini/man3-md.jpg" media="(max-width:1000px)"/>
+
+                                    <img src="resurse/imagini/man3-bg.jpg" alt="manual matematica clasa 11 m2">
+                                </picture>
+
+                                <figcaption>
+                                    <p>
+                                    Matematica clasa a XI-a. Breviar Teoretic M2 - Petre Simion
+                                    </p>
+                                    <ins>15 lei</ins> <s>18.50 lei</s> 
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section id="recomandari">
+                        <h3 id="titlu-rec">
+                            <i class="fa-solid fa-heart fa-beat"></i>
+                            <b>Recomandarea</b> noastră
+                        </h3>
+
+                        <div id="citat">
+                            <div>
+                                <img src="resurse/imagini/quote-dr.png" alt="quote-dr">
+                                <hr>
+                            </div>
+                            <q> Știai că acum sunt mai mulți oameni vii pe pământ decât au fost vreodată? Adică, dacă ar vrea toți să-l joace pe Hamlet în același timp, n-ar putea, pentru că n-ar fi destule cranii!</q>
+                            <div>
+                                <hr>
+                                <img src="resurse/imagini/quote-st.png" alt="quote-st">
+                            </div>
+                        </div>
+
+                        <div id="poza-recomandare">
+                            <figure>
+                                <picture>
+                                    <source srcset="resurse/imagini/rec-sm.jpg" media="(max-width:700px)"/>
+
+                                    <source srcset="resurse/imagini/rec-md.jpg" media="(max-width: 1000px)"/>
+
+                                    <img src="resurse/imagini/rec-bg.jpg" alt="Extrem de tare și incredibil de aproape">
+                                </picture>
+                                
+                                <figcaption> Extrem de tare și incredibil de aproape</figcaption>
+                            </figure>
+
+                            <p>
+                                Oskar Schell este inventator, francofil, explorator, pacifist, astrofizician amator, bijutier, admirator al lui Stephen Hawking și fan Beatles. Are nouă ani. Și o misiune secretă: să străbată New Yorkul în căutarea încuietorii la care se potrivește o cheie misterioasă, găsită printre lucrurile tatălui său, victimă a 
+                                <a href="https://ro.wikipedia.org/wiki/Atentatele_din_11_septembrie_2001" target="_blank">
+                                atentatului de la 11 septembrie</a>.
+                                Oskar filtrează lumea prin lentilele lui de copil supradotat, poate autist, poate doar dureros de precoce. Are o voce uneori exasperantă, alteori nemaipomenit de duioasă, de cele mai multe ori hipnotică - și un umor involuntar de zile mari.
+                            </p>
+
+                        </div>
+                    </section>
+
+                    
+
+                    <section id="evenim-trecute">
+                        <h3>
+                            <i class="fa-solid fa-fade fa-calendar-check" style="--fa-animation-duration: 2s;"></i>
+                            Evenimente recente</h3>
+                        
+                        <div id="evenim-trecute-cont">
+                            
+                                
+
+                            <div id="caseta-iframe">
+                                <iframe id="video-iframe" name="ifr-video" src="https://www.youtube.com/embed/qw_gtbQFrYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+                                <div id="linkuri-iframe">
+                                    <div class="opt-iframe">
+                                        <div></div>
+                                        <a href="https://www.youtube.com/embed/qw_gtbQFrYE" target="ifr-video">
+                                            Lansare ”Solenoid”
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="opt-iframe">
+                                        <div></div>
+                                        <a  href="https://www.youtube.com/embed/POAKKwIvwZI" target="ifr-video">
+                                            Interviu Ana Blandiana
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div id="container-evenim">
+                                <video width="400" height="240" controls="controls" poster="resurse/imagini/poster.png" preload="metadata">
+                                    <source src="resurse/video/video.mp4" type="video/mp4">
+                                    <source src="resurse/video/video.ogv" type="video/ogv">
+                                    <track default src="resurse/video/tracks/captions_ro.vtt" kind="captions" srclang="ro" label="Română">
+                                    <track  src="resurse/video/tracks/captions_es.vtt" kind="captions" srclang="es" label="Español">
+                                    Browserul dumneavoastră nu suportă tagul video.
+                                </video>
+                                <p>
+                                    Aici puteți viziona câteva evenimente recente.
+                                    <br>
+                                    <a class="btn btn-primary" href="resurse/imagini/brosura.png" download="brosura.jpg">
+                                        Click aici</a> pentru a descărca broșura de prezentare.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </section>
+                    <%- include("../fragmente/galerie-statica.ejs")  %> 
+                    
+                </div>
+
+                <section id="calendar">
+                    <h2>Calendar</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis voluptatum vero aliquid quisquam dolore tempore asperiores impedit velit pariatur corrupti, rem quae, tenetur architecto aperiam autem maxime ad officiis laborum?
+                    </p>
+                </section>
+                
+                <section id="tabel">
+                    <h2>Evenimente viitoare</h2>
+                    <div id="container-tabel">
+                        <table id="stilizare-tabel">
+                            <caption> Evenimente din următoarea lună</caption>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Eveniment</th>
+                                    <th>Interval orar</th>
+                                    <th>Locație</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> 10 nov</td>
+                                    <td>Lansare carte Mircea Cărtărescu</td>
+                                    <td>10-15</td>
+                                    <td>Lipscani 55</td>
+                                </tr>
+                                <tr>
+                                    <td>11 nov</td>
+                                    <td>Gaudeamus vine la ArtSafari</td>
+                                    <td> 8-20</td>
+                                    <td>Lipscani 18</td>
+                                </tr>
+                                <tr>
+                                    <td>15 nov</td>
+                                    <td>Reducere 20% la manuale școlare</td>
+                                    <td>0-24</td>
+                                    <td>Online</td>
+                                </tr>
+                                <tr>
+                                    <td>18 nov</td>
+                                    <td>Ecranizarea cărții ”Viața lui Pi”</td>
+                                    <td>10-13</td>
+                                    <td>Cinema City</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="4"> Participarea la evenimente necesită rezervare!</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="anunturi">
+                    <h2>Anunțuri</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos ipsam tenetur eaque itaque aliquam fugit, quis cum debitis explicabo animi nemo in pariatur voluptates quasi maiores quos quidem cumque nesciunt.</p>
+                </section>
+
+                <section id="util-online">
+                    <h2>Listă utilizatori online</h2>
+                    Ip-ul dumneavoastră este <%- locals.ip %>
+                </section>
+
+                <section id="statistici">
+                    <h2>Statistici</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quia corporis, maiores minima perferendis expedita atque similique soluta sunt tenetur nobis voluptatum iusto vitae molestias tempora ad repellat, ducimus qui?</p>
+                </section>
+
+                <section id="date-site">
+                    <h2>Întrebări frecvente</h2>
+
+                    <details>
+                        <summary>
+                            Cum se poate efectua plata?
+                        </summary>
+                        <p>
+                            Plata se poate efectua online sau prin ramburs la curier.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            Care este termenul de livrare?
+                        </summary>
+                        <p>
+                            Comenzile din București și Ilfov vor fi livrate în 24 de ore. Pentru celelalte județe, termenul de livrare este de 48 de ore.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            Doresc să modific comanda. Cum procedez?
+                        </summary>
+                        <p>
+                            Vă rugăm să ne contactați prin email sau prin telefon.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            Cum pot returna produsele?
+                        </summary>
+                        <p>
+                            Produsele pot fi returnate completând chestionarul de returnare.
+                        </p>
+                    </details>
+                </section>
+            </div>
+        </main>
+
+        <%- include("../fragmente/footer.ejs") %>
+    </body>
+</html>

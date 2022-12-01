@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "sass": "^1.56.1",
+    "sharp": "^0.31.2"
+  },
+  "name": "libraria-gaudeamus",
+  "version": "1.0.0",
+  "description": "site pentru o librarie",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "produse",
+    "carti",
+    "edituri",
+    "livrare",
+    "bestseller",
+    "plata"
+  ],
+  "author": "Iulia Udrea",
+  "license": "ISC"
+}

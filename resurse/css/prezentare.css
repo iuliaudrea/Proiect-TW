@@ -1,0 +1,56 @@
+
+#icons-prez {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+#icons-prez .fa-solid{
+    font-size: 2rem;
+    color: var(--culoare-icon-circle);
+}
+
+.container-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.icon-circle {
+    height: 90px;
+    width: 90px;
+    height: 5rem;
+    width: 5rem;
+    background-color: var(--culoare-circle);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.text-icon {
+    text-align: center;
+    max-height: 70px;
+}
+
+.text-icon div {
+    padding-top: 7px;
+    font-size: 0.9em;
+    max-width: 250px;
+}
+
+
+@media screen and (max-width:750px) {
+    
+    #icons-prez {
+        flex-direction: column;
+        align-items: center;
+    }
+}

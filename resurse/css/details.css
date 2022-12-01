@@ -1,0 +1,30 @@
+
+/* ### INTREBARI FRECVENTE - DETAILS SUMMARY #### */
+
+details {
+    --culoare-text-sum: #435360;
+    --culoare-text-details: #C2878D;
+    padding-bottom: 0.5rem;
+}
+
+details > summary {
+    color: var(--culoare-text-sum);
+    transition: all 0.3s linear;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+details[open] > summary {
+    color: var(--culoare-text-details);
+}
+
+details[open] > summary::marker {
+    content: "-";
+    font-weight: bold;
+}
+
+
+details > summary::marker {
+    content: "+";
+    font-weight: bold;
+}

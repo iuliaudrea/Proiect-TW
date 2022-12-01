@@ -1,0 +1,37 @@
+<section id="galerie-statica">
+    <h2>Galerie foto</h2>
+    <div id="grid-galerie">
+        <% for (let imag of locals.imagini) { 
+            var d = new Date();
+            minute = d.getMinutes()
+            // minute = 10
+            nr_poze = 0
+            if(nr_poze < 10 && imag.sfert_ora && parseInt(imag.sfert_ora) == Math.floor(minute / 15 + 1)) { nr_poze +=1;
+            %>
+            
+            <figure>
+                <picture>
+                    <source srcset="<%-imag.fisier_mic%>" media="(max-width:750px)">
+                    <source srcset="<%-imag.fisier_mediu%>" media="(max-width:1000px)">
+                    <img src="<%-imag.fisier%>" alt="<%-imag.descriere||imag.titlu%>">
+                </picture>
+                <figcaption>
+                    <%-imag.titlu%>
+                    <%if (imag.cc) {%>
+                        <div class="credits-galerie">
+                        <br>
+                        &ndash; de <a href="<%-imag.link_autor%>"  target="_blank"> <%-imag.autor%></a>, sub licența
+                        <a href="<%-imag.link_cc%>" target="_blank"><%-imag.cc%></a>
+                        </div>
+                    <%}%>
+                    </figcaption>
+            </figure>
+
+         <% 
+        } 
+        %>
+         
+    <% }%>
+
+    </div>
+</section>

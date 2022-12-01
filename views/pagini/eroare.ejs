@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title><%- locals.titlu %></title>
+
+    <%- include("../fragmente/head.ejs")  %> 
+    <link rel="stylesheet" type="text/css" href="resurse/css/eroare.css">
+
+</head>
+<body>
+    <%- include("../fragmente/header.ejs")  %> 
+
+    <main>
+
+        <div id="err-coloane">
+            <img id="err-imag" src="<%- locals.imagine %>" alt="imagine eroare">
+            <h2> <%- locals.titlu %> </h2>
+            <p> <%- locals.text %> Vă puteți intoarce la <a href="/index">pagina principală</a>.</p>
+        </div>
+    </main>
+
+    <%- include("../fragmente/footer.ejs") %>
+    
+</body>
+</html>
