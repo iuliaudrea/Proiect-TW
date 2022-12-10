@@ -1,8 +1,19 @@
 <header>
     <h1>Librăria Gaudeamus</h1>
-    <a href="/index">
-        <img id="logo" src="resurse/imagini/logo3m-nobkg.png" alt="logo">
-    </a>
+    <div  class="col-4">
+        <select id="tema">
+            <option selected value="light"> &#xf185; Light</option>
+            <option value="dark"> &#xf186; Dark</option>
+            <option value="christmas"> &#xf2dc; Christmas</option>
+        </select>
+    </div>
+    
+    <div class="col-4">
+        <!-- <a href="/index"> -->
+            <img id="logo" src="/resurse/imagini/logo3m-nobkg.png" alt="logo">
+        <!-- </a> -->
+    </div>
+    <!-- <div class="col-4"></div> -->
 </header>
 
 <nav>
@@ -36,9 +47,9 @@
         <li>
             <a href="/produse">Produse</a>
             <ul>
-                <li><a href="#">Beletristică</a></li>
-                <li><a href="#">Biografii</a></li>
-                <li><a href="#">Manuale</a></li>
+                <% for (opt of locals.optiuniMeniu) { %>
+                <li><a href="<%- "/produse?tip=" + opt.unnest%>"> <%- opt.unnest%></a></li>
+                <% } %>
             </ul>
         </li>
         <li>

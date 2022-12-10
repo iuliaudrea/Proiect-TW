@@ -5,7 +5,8 @@
     <title>Despre Gaudeamus</title>
 
     <%- include("../fragmente/head.ejs")  %> 
-    <link rel="stylesheet" type="text/css" href="resurse/css/despre.css">
+    <link rel="stylesheet" type="text/css" href="/resurse/css/despre.css">
+    <link rel="stylesheet" type="text/css" href="/resurse/css/galerie-animata.css"> 
 
 </head>
 <body>
@@ -13,7 +14,6 @@
 
     <div id="container-despre">
         <section id="poveste" class="elem-despre">
-            <!-- <img src="resurse/imagini/despre/desprenoi.png" alt="despre noi"> -->
             <div>
                 <h2>Povestea noastră</h2>
                 <!-- <hr> -->
@@ -27,11 +27,9 @@
                 <!-- <hr> -->
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ut non ea, officiis est aspernatur mollitia ipsam provident exercitationem sint eius consequatur quaerat vel optio natus nesciunt, eum culpa alias?Ut sapiente odio doloremque delectus ea modi quis nam cupiditate illum at, minima mollitia.</p>
             </div>
-            <!-- <img src="resurse/imagini/despre/istoric.png" alt="istoric"> -->
         </section>
 
         <section id="motivatie" class="elem-despre">
-            <!-- <img src="resurse\imagini\despre\motivatie.png" alt="motivatie"> -->
             <div>
                 <h2>Motivația noastră</h2>
                 <!-- <hr> -->
@@ -47,27 +45,35 @@
 
         <section id="informatii" class="sectiune-despre">
             <h2>Informații</h2>
-            <div id="text">
-                Galerie
-                <div id="text-reflectat">
-                    Galerie
-                </div>
-            </div>
+            
             <p id="par-col">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, laudantium a sequi nihil, ipsa at laboriosam consequatur impedit sapiente dolor omnis vitae illum dolorem aspernatur deserunt? Culpa omnis modi corrupti!
                 Exercitationem veniam, obcaecati debitis, asperiores dolorum laborum officiis esse maxime fugiat ex dolor, totam nemo aperiam optio illo? Vero sint, unde quaerat hic veritatis obcaecati aspernatur. Soluta atque vel excepturi!
                 Molestiae aperiam necessitatibus cumque est odio aspernatur officia! Commodi aut minus magnam labore ducimus dolor nostrum iusto. A maxime odit necessitatibus mollitia! Minima itaque aperiam blanditiis earum veritatis provident? Laudantium!
                 Perferendis nostrum fugit consequuntur quo architecto hic sunt inventore expedita? Itaque perspiciatis nihil ratione accusamus, nulla aliquam sequi? Eveniet, autem. Possimus natus illum facilis aspernatur facere, eligendi molestias ducimus fugit.
             </p>
+            <div id="text">
+                Galerie
+                <div id="text-reflectat">
+                    Galerie
+                </div>
+            </div>
+            <div id="galerie-animata" class="galerie-a">
+                <%  
+                // console.log("Nr imagini in ejs: " + locals.nrimag); 
+                for (let i = 1; i <= locals.nrimag; i++) { 
+                    imag = locals.imagini[i * 2 - 1];
+                             %>
+                                <figure>
+                                    <img src="<%- imag.fisier %>" alt="imagine">
+                                    <figcaption><%- imag.descriere %></figcaption>
+                                </figure>
+                        <% }  %>
+            </div>
 
         </section>
 
-        
 
-        <!-- <section id="galerie-animata">
-            <h2>Galerie animată</h2>
-
-        </section> -->
     </div>
     </main>
 

@@ -6,7 +6,7 @@
     align-items: center;
     color: var(--culoare-quote);
     quotes: none;
-    width: 50%;
+    width: 60%;
     font-family: 'Lora', serif;
     font-size: 1rem;
     text-align: justify;
@@ -35,7 +35,7 @@
     border: 0;
 }
 
-@media screen and (max-width:1500px) {
+@media screen and (max-width: 1000px) {
     #citat {
         width: 90%;
     }

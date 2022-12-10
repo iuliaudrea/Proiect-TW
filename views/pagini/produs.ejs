@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+        
+        <title><%-locals.prod.titlu%></title>
+        <%- include("../fragmente/head") %>
+          
+        <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <%- include("../fragmente/header") %>
+
+    <main>
+        <section id="centrareProdus">
+            <h2><span class="titlu"><%- locals.prod.titlu %></span></h2>
+
+                <article id="art-produs">
+                    <figure class="imag-produs">
+                        <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>
+
+                    <div class="detaliiProd">
+                        <p class="numeCarac">Autor(i): <span class="autori"><%- locals.prod.autori %> </span></p>
+                        <p class="numeCarac">Preț: <span class="pret"><%- locals.prod.pret %> Lei </span></p>
+                        <p class="numeCarac">În stoc: 
+                            <span>
+                                <% if(locals.prod.in_stoc){ %> Disponibil <%} else {%> Indisponibil <% }%>
+                            </span>
+                        </p>
+
+                        <div id="iconContainer">
+                            <div>
+                                <div class="numeCarac">Categorie:&nbsp;</div>
+                                <div class="iconDen">
+                                    <i class="fa-brands fa-buffer"></i>
+                                </div>
+                                <div class="infoCarac"> 
+                                    <%-locals.prod.categorie%>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="numeCarac">Tip Copertă:&nbsp;</div>
+                                <div class="iconDen">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="infoCarac"> 
+                                    <%-locals.prod.tip_coperta%>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="numeCarac">Editură:&nbsp;</div>
+                                <div class="iconDen">
+                                    <i class="fa-solid fa-pen-nib"></i>
+                                </div>
+                                <div class="infoCarac"> 
+                                    <%-locals.prod.editura%>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="numeCarac">Număr pagini:&nbsp;</div>
+                                <div class="iconDen">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                </div>
+                                <div class="infoCarac"> 
+                                    <%-locals.prod.nr_pagini%>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="numeCarac">An publicare:&nbsp;</div>
+                                <div class="iconDen">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                </div>
+                                <div class="infoCarac"> 
+                                    <%-locals.prod.data_publicare.getFullYear()%>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <p class="numeCarac" id="descriere">Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    </div>
+                    
+                </article>
+            
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

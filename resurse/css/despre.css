@@ -1,8 +1,4 @@
 #container-despre {
-    --culoare-hr: #D9DBD3;
-    --culoare-shadow-img: #D9DBD3;
-
-    
     --height-continut: 300px;
 
     margin: auto;
@@ -17,7 +13,16 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 1em 0;
 }
+
+/* .elem-despre p {
+    text-indent: 50px;
+}
+
+.elem-despre p::first-letter{
+    font-size: 200%;
+} */
 
 
 .elem-despre div {
@@ -57,7 +62,7 @@
     }
 
     .elem-despre {
-        width: 90%;
+        width: 100%;
     }
 }
 

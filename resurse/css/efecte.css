@@ -25,6 +25,17 @@
     margin: 2rem;
 }
 
+.dark #stilizare-hr {
+    box-shadow: 0 0 3px var(--culoare-hr-background),
+                0 0 5px var(--culoare-hr-background), 
+                0 0 10px var(--culoare-hr-background);
+    background-image: radial-gradient(
+        var(--culoare-hr-linie) 0%,
+        var(--culoare-hr-linie) 40%,
+        transparent 80%
+        );
+}
+
 #stilizare-hr::before{
     content: "";
     position: absolute;
@@ -34,6 +45,10 @@
     height: 3rem;
     background-size: 3rem;
 } 
+
+.dark #stilizare-hr::before{
+    background-image: url('/resurse/imagini/icon-hr3-dark.png');
+}
 
 .sectiune-despre {
     width: 90%;
@@ -58,6 +73,8 @@
     transform: skewY(-15deg);
     font-size: 1.5rem;
     transition: color 0.5s linear;
+    left: -43px;
+    margin: 0 auto;
 }
 
 #text-reflectat {

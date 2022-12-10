@@ -1,19 +1,12 @@
 nav {
     --inaltime-meniu: 50px;
     --inaltime-meniu-mic: 30px;
-    --latime-buton: 180px;
-    --culoare-meniu: #F2F5EA;
-    --culoare-meniu-contrast: #D6DBD2;
-    --culoare-text-meniu: #435360;
-    --culoare-text-meniu-contrast: #fff;
-    --culoare-bara-gradient: #435360;
-    --culoare-burger: #435360;
 
     height: var(--inaltime-meniu);
     background-color: var(--culoare-meniu);
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 15;
 }
 
 

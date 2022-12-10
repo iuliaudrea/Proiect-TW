@@ -1,0 +1,6 @@
+@use 'sass:list';
+@use 'sass:math';
+
+@use '../resurse/scss/galerie_animata_frag' with (
+  $nrimag: 8
+);

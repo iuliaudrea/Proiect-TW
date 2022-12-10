@@ -1,0 +1,127 @@
+#art-produs{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#centrareProdus{
+    margin-top: 2rem;
+}
+
+#art-produs img {
+    width: 300px;
+    max-height: 480px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.dark #art-produs img {
+    box-shadow: rgb(255 255 255 / 40%) 0px 5px 15px;
+}
+
+#art-produs figure{
+    height: 480px;
+    padding-right: 3rem;
+}
+
+.titlu{
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+
+#iconContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#iconContainer > *{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconDen{
+    background-color: var(--culoare-circle);
+    width: 70px;
+    height: 70px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.numeCarac{
+    font-weight: bold;
+    color: var(--culoare-icon-circle);
+}
+
+.numeCarac span {
+    font-weight: normal;
+    color: var(--culoare-text);
+    font-size: 1rem;
+}
+
+
+.iconDen i {
+    color: var(--culoare-icon-circle);
+}
+
+#descriere{
+    margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 1100px) {
+    #art-produs{
+        display: block;
+    }
+
+    #art-produs img {
+        width: 200px;
+        max-height: 330px;
+    }
+    
+    #art-produs figure{
+        height: 330px;
+        width: max-content;
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    #art-produs img {
+        width: 200px;
+        max-height: 330px;
+    }
+    
+    #art-produs figure{
+        height: 330px;
+        width: max-content;
+        margin: 0 auto;
+    }
+
+    #iconContainer{
+        display: block;
+    }
+
+    .iconDen{
+        display: none;
+    }
+
+    #iconContainer > * {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: baseline;
+        margin-bottom: 1rem;
+    }
+}
+

@@ -1,16 +1,4 @@
 #stilizare-tabel {
-    --culoare-border-thead: #fafbf7;
-    --culoare-border-tfoot: #fafbf7;
-
-    --culoare-bg-tabel: #D9DBD3;
-    --culoare-bg-thead: #435360;
-    --culoare-text-thead: #fafbf7;
-
-    --culoare-border-c1: #5D737E;
-    --culoare-border-c2: #A1B1BA; 
-    --culoare-rand-hover: #435360;
-    /* --culoare-rand-hover: #fafbf7; */
-    
     --grosime-border: 3px;
     
     caption-side: bottom;

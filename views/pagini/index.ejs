@@ -7,12 +7,12 @@
         
         <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-        <link rel="stylesheet" href="resurse/css/iframe.css">
-        <link rel="stylesheet" href="resurse/css/table.css">
-        <link rel="stylesheet" href="resurse/css/prezentare.css">
-        <link rel="stylesheet" href="resurse/css/img-prez.css">
-        <link rel="stylesheet" href="resurse/css/citat.css">
-        <link rel="stylesheet" href="resurse/css/details.css">
+        <link rel="stylesheet" href="/resurse/css/iframe.css">
+        <link rel="stylesheet" href="/resurse/css/table.css">
+        <link rel="stylesheet" href="/resurse/css/prezentare.css">
+        <link rel="stylesheet" href="/resurse/css/img-prez.css">
+        <link rel="stylesheet" href="/resurse/css/citat.css">
+        <link rel="stylesheet" href="/resurse/css/details.css">
 
         <%- include("../fragmente/head.ejs") %>
 
@@ -30,9 +30,9 @@
                     <div id="prez-vizuala">
 
                         <div class="imagini">
-                            <img class="img-prez" id="welcome-img" src="resurse/svg/welcome.svg" alt="welcome">
-                            <img class="img-prez" id="bookshelf-img" src="resurse/svg/bookshelf.svg" alt="bookshelf">
-                            <img class="img-prez" id="cat-img" src="resurse/svg/cat.svg" alt="pisica-draguta">
+                            <img class="img-prez" id="welcome-img" src="/resurse/svg/welcome.svg" alt="welcome">
+                            <img class="img-prez" id="bookshelf-img" src="/resurse/svg/bookshelf.svg" alt="bookshelf">
+                            <img class="img-prez" id="cat-img" src="/resurse/svg/cat.svg" alt="pisica-draguta">
                         </div>
 
                     </div>
@@ -123,57 +123,77 @@
                             </math>
                         </div>
 
-                        <p id="nou-intreb"> Ești elev de liceu și vrei să afli cum se rezolvă această <i>integrală Riemann</i>? Îți recomandăm următoarele manuale și culegeri:</p>
+                        <p id="nou-intreb"> Ești elev de liceu și vrei să afli cum se rezolvă această <i>integrală Riemann</i>? 
+                            <br>
+                            Îți recomandăm următoarele manuale și culegeri:</p>
 
                         <div id="poze-manuale">
                             <figure id="fig1">
                                 <picture>
-                                    <source srcset="resurse/imagini/man1-sm.jpg" media="(max-width:700px)"/>
+                                    <a href="/produs/11" target="_blank">
+                                        <source srcset="/resurse/imagini/produse/mici-genii.jpg" media="(max-width:700px)"/>
 
-                                    <source srcset="resurse/imagini/man1-md.jpg" media="(max-width:1000px)"/>
+                                        <source srcset="/resurse/imagini/produse/mici-genii.jpg" media="(max-width:1000px)"/>
 
-                                    <img src="resurse/imagini/man1-bg.jpg" alt="manual matematica clasa 11 m1">
+                                        <img src="/resurse/imagini/produse/mici-genii.jpg" alt="Probleme de mate pentru mici genii">
+                                    </a>
                                 </picture>
                                 
                                 <figcaption>
-                                    <p>
-                                    Matematica clasa a XI-a. Breviar Teoretic M1 - Petre Simion
-                                    </p>
-                                    <ins>15 lei</ins> <s>18.50 lei</s> 
+                                    <a href="/produs/11" target="_blank">
+                                        <p>
+                                            Probleme de mate pentru mici genii
+                                        </p>
+                                    </a>
+                                    <div>
+                                        <ins>11.40 Lei</ins> <s>13.90 Lei</s>
+                                    </div>
                                 </figcaption>
                             </figure>
 
                             <figure id="fig2">
                                 <picture>
-                                    <source srcset="resurse/imagini/man2-sm.jpg" media="(max-width:700px)"/>
+                                    <a href="/produs/14" target="_blank">
+                                        <source srcset="/resurse/imagini/produse/caiet-vacanta.jpg" media="(max-width:700px)"/>
 
-                                    <source srcset="resurse/imagini/man2-md.jpg" media="(max-width:1000px)"/>
+                                        <source srcset="/resurse/imagini/produse/caiet-vacanta.jpg" media="(max-width:1000px)"/>
 
-                                    <img src="resurse/imagini/man2-bg.jpg" alt="manual matematica clasa 11 tehnologic">
+                                        <img src="/resurse/imagini/produse/caiet-vacanta.jpg" alt="Caietul meu de vacanță">
+                                    </a>
                                 </picture>
 
                                 <figcaption>
-                                    <p>
-                                    Matematica clasa a XI-a. Breviar Teoretic Tehnologic - Petre Simion
-                                    </p>
-                                    <ins>15 lei</ins> <s>18.50 lei</s> 
+                                    <a href="/produs/14" target="_blank">
+                                        <p>
+                                            Caietul meu de vacanță - Matematică 
+                                        </p>
+                                    </a>
+                                    <div>
+                                        <ins>29.00 Lei</ins> <s>31.50 Lei</s>
+                                    </div>
                                 </figcaption>
                             </figure>
 
                             <figure id="fig3">
                                 <picture>
-                                    <source srcset="resurse/imagini/man3-sm.jpg" media="(max-width:700px)"/>
+                                    <a href="/produs/13" target="_blank">
+                                        <source srcset="/resurse/imagini/produse/tocesti-mate.jpg" media="(max-width:700px)"/>
 
-                                    <source srcset="resurse/imagini/man3-md.jpg" media="(max-width:1000px)"/>
+                                        <source srcset="/resurse/imagini/produse/tocesti-mate.jpg" media="(max-width:1000px)"/>
 
-                                    <img src="resurse/imagini/man3-bg.jpg" alt="manual matematica clasa 11 m2">
+                                        <img src="/resurse/imagini/produse/tocesti-mate.jpg" alt="Cum să reușești fără să tocești la mate">
+                                    </a>
                                 </picture>
 
                                 <figcaption>
-                                    <p>
-                                    Matematica clasa a XI-a. Breviar Teoretic M2 - Petre Simion
-                                    </p>
-                                    <ins>15 lei</ins> <s>18.50 lei</s> 
+                                    <a href="/produs/13" target="_blank">
+                                        <p>
+                                            Cum să reușești fără să tocești la mate
+                                        </p>
+                                    </a>
+                                    <div>
+                                        <ins>44.25 Lei</ins> <s>48.90 Lei</s>
+                                    </div>
                                 </figcaption>
                             </figure>
                         </div>
@@ -187,34 +207,34 @@
 
                         <div id="citat">
                             <div>
-                                <img src="resurse/imagini/quote-dr.png" alt="quote-dr">
+                                <img src="/resurse/imagini/quote-dr.png" alt="quote-dr">
                                 <hr>
                             </div>
                             <q> Știai că acum sunt mai mulți oameni vii pe pământ decât au fost vreodată? Adică, dacă ar vrea toți să-l joace pe Hamlet în același timp, n-ar putea, pentru că n-ar fi destule cranii!</q>
                             <div>
                                 <hr>
-                                <img src="resurse/imagini/quote-st.png" alt="quote-st">
+                                <img src="/resurse/imagini/quote-st.png" alt="quote-st">
                             </div>
                         </div>
 
                         <div id="poza-recomandare">
                             <figure>
                                 <picture>
-                                    <source srcset="resurse/imagini/rec-sm.jpg" media="(max-width:700px)"/>
+                                    <a href="">
+                                        <source srcset="/resurse/imagini/rec-sm.jpg" media="(max-width:700px)"/>
 
-                                    <source srcset="resurse/imagini/rec-md.jpg" media="(max-width: 1000px)"/>
+                                        <source srcset="/resurse/imagini/rec-md.jpg" media="(max-width: 1000px)"/>
 
-                                    <img src="resurse/imagini/rec-bg.jpg" alt="Extrem de tare și incredibil de aproape">
+                                        <img src="/resurse/imagini/rec-bg.jpg" alt="Extrem de tare și incredibil de aproape">
+                                    </a>
                                 </picture>
                                 
                                 <figcaption> Extrem de tare și incredibil de aproape</figcaption>
                             </figure>
 
                             <p>
-                                Oskar Schell este inventator, francofil, explorator, pacifist, astrofizician amator, bijutier, admirator al lui Stephen Hawking și fan Beatles. Are nouă ani. Și o misiune secretă: să străbată New Yorkul în căutarea încuietorii la care se potrivește o cheie misterioasă, găsită printre lucrurile tatălui său, victimă a 
-                                <a href="https://ro.wikipedia.org/wiki/Atentatele_din_11_septembrie_2001" target="_blank">
-                                atentatului de la 11 septembrie</a>.
-                                Oskar filtrează lumea prin lentilele lui de copil supradotat, poate autist, poate doar dureros de precoce. Are o voce uneori exasperantă, alteori nemaipomenit de duioasă, de cele mai multe ori hipnotică - și un umor involuntar de zile mari.
+                                Oskar Schell este inventator, francofil, explorator, pacifist, astrofizician amator, bijutier, admirator al lui Stephen Hawking și fan Beatles. Are nouă ani. Și o misiune secretă: să străbată New Yorkul în căutarea încuietorii la care se potrivește o cheie misterioasă, găsită printre lucrurile tatălui său, victimă a <a href="https://ro.wikipedia.org/wiki/Atentatele_din_11_septembrie_2001" target="_blank">
+                                atentatului de la 11 septembrie</a>. Oskar filtrează lumea prin lentilele lui de copil supradotat, poate autist, poate doar dureros de precoce.
                             </p>
 
                         </div>
@@ -252,17 +272,17 @@
                                 </div>
                             </div>
                             <div id="container-evenim">
-                                <video width="400" height="240" controls="controls" poster="resurse/imagini/poster.png" preload="metadata">
-                                    <source src="resurse/video/video.mp4" type="video/mp4">
-                                    <source src="resurse/video/video.ogv" type="video/ogv">
-                                    <track default src="resurse/video/tracks/captions_ro.vtt" kind="captions" srclang="ro" label="Română">
-                                    <track  src="resurse/video/tracks/captions_es.vtt" kind="captions" srclang="es" label="Español">
+                                <video width="400" height="240" controls="controls" poster="/resurse/imagini/poster.png" preload="metadata">
+                                    <source src="/resurse/video/video.mp4" type="video/mp4">
+                                    <source src="/resurse/video/video.ogv" type="video/ogv">
+                                    <track default src="/resurse/video/tracks/captions_ro.vtt" kind="captions" srclang="ro" label="Română">
+                                    <track  src="/resurse/video/tracks/captions_es.vtt" kind="captions" srclang="es" label="Español">
                                     Browserul dumneavoastră nu suportă tagul video.
                                 </video>
                                 <p>
                                     Aici puteți viziona câteva evenimente recente.
                                     <br>
-                                    <a class="btn btn-primary" href="resurse/imagini/brosura.png" download="brosura.jpg">
+                                    <a class="btn btn-primary" href="/resurse/imagini/brosura.png" download="brosura.jpg">
                                         Click aici</a> pentru a descărca broșura de prezentare.
                                 </p>
                             </div>

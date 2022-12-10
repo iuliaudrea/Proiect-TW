@@ -1,10 +1,5 @@
 
 #caseta-iframe {
-    --culoare-border:#435360;
-    --culoare-text:#435360;
-    --culoare-gradient: #F2F5EA;
-    --culoare-desc-hover: #fafbf7;
-    --culoare-bg-etich: #E8ECEE;
     padding: 10px;
     width: max-content;
     display: flex;
