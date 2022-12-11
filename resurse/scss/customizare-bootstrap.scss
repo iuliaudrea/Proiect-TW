@@ -5,17 +5,23 @@
     $body-color: black,
     $grid-breakpoints: (
     xs: 0,
-    sm: 576px,
-    md: 750px,
+    sm: 600px,
+    md: 850px,
     lg: 1000px,
     xl: 1200px,
     xxl: 1400px
     ),
-    $border-radius: 0.5rem,
+    $border-radius: 0.8rem,
     $h2-font-size: 1.4rem,
     $h3-font-size: 1.4rem,
     $font-family-base: 'Lora',
     $body-bg: #FAFBF7,
     $hr-margin-y: 0.5rem,
-    $hr-opacity: 1
+    $hr-opacity: 1,
+    $btn-border-width: 0.2rem,
+    $form-range-thumb-width: 1.5rem,
+    $form-range-thumb-bg: #435360,
+    $form-range-track-bg:  #D9DBD3,
+    $form-range-thumb-active-bg: tint-color(#435360, 70%),
+    $input-padding-x: 0.5rem
 );

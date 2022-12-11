@@ -1,11 +1,14 @@
 nav {
-    height: var(--inaltime-meniu-mic);
+  height: calc(1.5*var(--inaltime-meniu-mic));
+
 }
 
 
 #hamburger{
     display: block;
-    height: var(--inaltime-meniu-mic);
+    height: calc(1.5*var(--inaltime-meniu-mic));
+    display: flex;
+    align-items: center;
 }
 
 
@@ -16,13 +19,14 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-left: 10px;
+    margin-left: 1rem;
 }
 
 .hamburger-line {
     height: 5px;
     background-color: var(--culoare-burger);
     border-radius: 2.5px;
+    transform: scale(0.9);
 }
 
 #ch-menu:checked~ul.meniu {

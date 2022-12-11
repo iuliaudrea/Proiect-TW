@@ -1,7 +1,24 @@
 window.addEventListener("load", function(){
 
     document.getElementById("inp-pret").oninput = function(){
-        document.getElementById("infoRange").innerHTML = `(${this.value} Lei)`;
+        document.getElementById("infoRange").innerHTML = 
+            "("+ parseFloat(this.value).toFixed(2) + " Lei)";
+    }
+
+    document.getElementById("i_textarea").oninput = function() {
+        if(!this.value.toLowerCase().trim().match(new RegExp("^[a-zA-Z\- 0-9]*$"))) {
+            this.classList.add("is-invalid");
+        } else {
+            this.classList.remove("is-invalid");
+        }
+    }
+
+    document.getElementById("inp-nume").oninput = function() {
+        if(!this.value.toLowerCase().trim().match(new RegExp("^[a-zA-Z\- ]*$"))) {
+            this.classList.add("is-invalid");
+        } else {
+            this.classList.remove("is-invalid");
+        }
     }
 
     document.getElementById("filtrare").onclick = function(){
@@ -10,11 +27,7 @@ window.addEventListener("load", function(){
         var inpNume = document.getElementById("inp-nume").value.toLowerCase().trim();
         var inpTextarea = document.getElementById("i_textarea").value.toLowerCase().trim();
 
-        condValidare = condValidare && inpNume.match(new RegExp("^[a-zA-Z\- ]*$")) && inpTextarea.match(new RegExp("^[a-zA-Z\- 0-9]*$"));
-        if(!condValidare){
-            alert("Inputuri greșite!");
-            return;
-        }
+        // condValidare = condValidare && inpNume.match(new RegExp("^[a-zA-Z\- ]*$")) //&& inpTextarea.match(new RegExp("^[a-zA-Z\- 0-9]*$"));
 
         var inpCategorie = document.getElementById("inp-categorie").value;
         var inpPret = document.getElementById("inp-pret").value;
@@ -25,7 +38,7 @@ window.addEventListener("load", function(){
         var inpDatalist = document.getElementById("i_datalist").value;
         var optAutori = document.getElementById("i_sel_multiplu").options;
 
-
+        nrProd = 0;
         var produse = document.getElementsByClassName("produs");
         for(let produs of produse){
             var cond1 = false, cond2 = false, cond3 = false, cond4 = false, cond5 = false, cond6 = false, cond7 = false, cond8 = false;
@@ -75,7 +88,27 @@ window.addEventListener("load", function(){
 
             if(cond1 && cond2 && cond3 && cond4 && cond5 && cond6 && cond7 && cond8){
                 produs.style.display = "block";
+                nrProd += 1;
             }
+
+        }
+
+        
+        if(!nrProd) {
+            
+            if(!document.getElementById("mesaj")) {
+                mesaj = document.createElement("p");
+                mesaj.id = "mesaj";
+                mesaj.innerHTML = "Niciun produs nu corespunde filtrării!";
+    
+                var prod = document.getElementById("produse")
+                prod.appendChild(mesaj);
+                mesaj.style = `
+                    text-align: center;
+                    font-size: 1.2rem;
+                    color: var(--culoare-avertizare);
+                    font-weight: bold;
+                `}
         }
     }
 
@@ -88,13 +121,16 @@ window.addEventListener("load", function(){
 
         // resetare filtre
         document.getElementById("inp-nume").value = "";
+        document.getElementById("inp-nume").classList.remove("is-invalid");
         document.getElementById("sel-toate").selected = true;
         document.getElementById("toateStoc").checked = true;
         document.getElementById("i_datalist").value = "";
         document.getElementById("inp-pret").value = document.getElementById("inp-pret").min;
-        document.getElementById("infoRange").innerHTML = "("+ document.getElementById("inp-pret").value + ")";
+        document.getElementById("infoRange").innerHTML = 
+            "("+ parseFloat(document.getElementById("inp-pret").value).toFixed(2) + " Lei)";
         for(let opt of document.getElementById("i_sel_multiplu").options){opt.selected = false;}
         document.getElementById("i_textarea").value = "";
+        document.getElementById("i_textarea").classList.remove("is-invalid");
         for (elem of document.getElementsByClassName("inp-check")) elem.checked = true;
     }
 
@@ -128,20 +164,21 @@ window.addEventListener("load", function(){
     }
 
     document.getElementById("calculare").onclick = function(){
-        console.log("ceva ceva");
         var produse = document.getElementsByClassName("produs");
-            let suma = 0;
-            for(let prod of produse) {
-                if(prod.style.display != "none")
-                    suma += parseFloat(prod.getElementsByClassName("val-pret")[0].innerHTML)
+        let suma = 0, nr_prod = 0;
+        for(let prod of produse) {
+            if(prod.style.display != "none"){
+                suma += parseFloat(prod.getElementsByClassName("val-pret")[0].innerHTML)
+                nr_prod += 1;
             }
+        }
 
-        suma = suma / produse.length;
+        suma = suma / nr_prod;
 
         if(!document.getElementById("rezultat")) {
             rezultat = document.createElement("div");
             rezultat.id = "rezultat";
-            rezultat.innerHTML = "Media prețurilor: " + suma + " Lei";
+            rezultat.innerHTML = "Media prețurilor: " + suma.toFixed(2) + " Lei";
 
             var ps = document.getElementById("butoaneFiltrare");
             ps.parentNode.insertBefore(rezultat, ps);

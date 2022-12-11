@@ -97,6 +97,7 @@ body{
     --culoare-shadow-img: #D9DBD3;
 
     --culoare-bg-produs: white;
+    --culoare-avertizare: #88444C;
 
     background-color: var(--culoare-bg);
     margin: 0px;
@@ -168,6 +169,7 @@ body{
     --culoare-rand-hover: #A1B1BA;
 
     --culoare-bg-produs: #1f1f1f;
+    --culoare-avertizare: #C1858B;
 }
 
 
@@ -224,6 +226,8 @@ body{
     --culoare-hr: #D9DBD3;
     --culoare-shadow-img: #D9DBD3;
     --culoare-bg-produs: white;
+    --culoare-avertizare: #ab4a41;
+
 }    
 
 

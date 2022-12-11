@@ -1,167 +1,185 @@
-<!DOCTYPE html>
-<html  lang="ro">
-    <head>
-        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
-        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
-        <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
-        <title>Produse | Gaudeamus</title>
-        <%- include("../fragmente/head") %>
-        <script type="text/javascript" src=/resurse/js/produse.js></script>
-    </head>
-    <body>
-    <%- include("../fragmente/header") %>
+    <!DOCTYPE html>
+    <html  lang="ro">
+        <head>
+            <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+            <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+            <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+            <title>Produse | Gaudeamus</title>
+            <%- include("../fragmente/head") %>
+            <script type="text/javascript" src=/resurse/js/produse.js></script>
+        </head>
+        <body>
+        <%- include("../fragmente/header") %>
 
-    <main>
+        <main>
 
-    <label> Caută după autor: <input type="text" id="inp-nume"  placeholder="<%- locals.inpAutor%>"></label>
+            <div class="row">
+                <div class="col-6 col-lg-4">
+                    <label> <div class="numeFiltru">Caută după autor: </div>
+                        <input  class="form-control" type="text" id="inp-nume"  placeholder="<%- locals.inpAutor%>"></label>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <label> <div class="numeFiltru">An apariție: </div>
+                        <input class="form-control" list="id_ani" id="i_datalist"  placeholder="<%- locals.inpAn%>">
+                        <datalist id="id_ani">
+                            <% for (let an of locals.aniPublicare) { %>
+                                <option value="<%- an.an %>"></option>
+                            <% } %>
+                        </datalist>
+                    </label>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <label><div class="numeFiltru"> Categorie: </div>
+                        <select class="form-select" id="inp-categorie">
+                            <option id="sel-toate" selected value="toate">toate</option>
+                            <% for (let opt of locals.optiuni) { %>
+                                <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+                            <% } %>
+                        </select>
+                    </label>
+                </div>
+            <!-- </div>
 
-    <label>An apariție: 
-        <input list="id_ani" id="i_datalist"  placeholder="<%- locals.inpAn%>">
-        <datalist id="id_ani">
-            <% for (let an of locals.aniPublicare) { %>
-                <option value="<%- an.an %>"></option>
-            <% } %>
-        </datalist>
-    </label>
-
-    <label>Căutați în descriere:
-        <textarea id="i_textarea"  placeholder="<%- locals.inpDescriere.slice(0,18)+"..."%>"></textarea>
-    </label>
-    
-    <label>Categorie: 
-        <select id="inp-categorie">
-            <option id="sel-toate" selected value="toate">toate</option>
-            <% for (let opt of locals.optiuni) { %>
-                <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
-            <% } %>
-        </select>
-    </label>
-
-<br><br>
-    <label> <div class="numeFiltru"> Selectați autorii pe care nu îi doriți: </div>
-        <select id="i_sel_multiplu" multiple size="5">
-            <% for (let autor of locals.autori) {%>
-                <option value="<%- autor.aut %>"><%- autor.aut %> </option>
-            <% } %>
-        </select>
-    </label>
-
-    <div style="display: inline-block;"> <div class="numeFiltru"> Disponibilitate: </div>
-        <label>Toate
-            <input id="toateStoc" checked name="gr_rad" type="radio"/> 
-        </label><br>
-        <label> În stoc
-            <input id="trueStoc" name="gr_rad" type="radio"/> 
-        </label><br>
-        <label> Indisponibil
-            <input id="falseStoc" name="gr_rad" type="radio"/> 
-        </label><br>
-    </div>
-
-
-    <div style="display: inline-block;" id="containter-inp-check">
-        <div class="numeFiltru"> Subcategorie: </div>
-    <% for(subopt of locals.suboptiuni) { %>
-        <label for="<%- subopt.unnest%>"> <%- subopt.unnest%></label>
-        <input id="<%- subopt.unnest%>" class="inp-check" name="gr_chck" checked type="checkbox"/> <br>
-    <% } %>
-    </div>
-
-<br><br>
-    <label> Preț minim: 
-        <span id="minRange"><%-locals.inputs.min%></span>
-        <input type="range" id="inp-pret" value="<%-locals.inputs.min%>" 
-        min="<%-locals.inputs.min%>"  max="<%-locals.inputs.max%>" step = 0.1> 
-        <span id="maxRange"><%-locals.inputs.max%></span>
-        <span id="infoRange">(<%-locals.inputs.min%> Lei)</span>
-    </label>
-
-
-        <p id="butoaneFiltrare">
-        <button class="btn btn-primary" id="filtrare">Filtreaza</button>
-        <button class="btn btn-secondary" id="resetare">Reseteaza</button>
-        <button  class="btn btn-secondary" id="sortCrescNume"> Sortează crescător Autor&Preț</button>
-        <button class="btn btn-secondary" id="sortDescrescNume">Sorteaza descrescator dupa pret si nume</button>
-        <button class="btn btn-primary" id="calculare">Calculare</button>
-        </p>
-        
-        <!-- <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p> -->
-        <section id="produse">
-            <h2>Produse</h2>
-            <div class="grid-produse">
-                <% for(let prod of locals.produse) { %>
-                    <article class="produs <%- prod.categorie%>" id="<%- "ar_ent_" + prod.id%>">
-                        <h3 class="titlu"><a href="/produs/<%-prod.id %>"><span class="val-titlu"><%- prod.titlu%></span></a></h3>
-
-                        <div class="aliniere-col">
-                            <div class="info-prez">
-                                <p class="categorie"><i class="fa-brands fa-buffer"></i> Categorie: <span class="val-categorie"><%- prod.categorie%></span></p>
-                                <figure>
-                                    <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.titlu %>]" /></a>
-                                </figure>
-                                <p class="descriere"> 
-                                    <i class="fa-solid fa-feather-pointed"></i> Despre: <span class="val-descriere"><%- prod.descriere%></span>
-                                </p>
-                            </div>
-                            <div class="info-prod">
-                                <p class="pret">
-                                    <i class="fa-solid fa-dollar-sign"></i> Preț: <span class="val-pret"><%- prod.pret%></span> <span>Lei</span>
-                                </p>
-
-                                <p class="suboptiune">
-                                    <i class="fa-solid fa-paperclip"></i> Copertă: <span class="val-subopt"><%- prod.tip_coperta%></span>
-                                </p>
-
-                                <p class="autori"> 
-                                    <i class="fa-solid fa-user"></i> Autor(i): <span class="val-autori">
-                                        <% if (prod.autori.length == 0) {%> &mdash; 
-                                        <% } else
-                                            for(let i = 0; i < prod.autori.length - 1; i++){ %>
-                                            <%- prod.autori[i]%>,
-                                        <% } %> 
-                                        <%- prod.autori[prod.autori.length-1]%>
-                                        </span>
-                                </p>
-
-                                <p class="data">
-                                    <i class="fa-regular fa-calendar"></i> Data publicării: <br>
-                                    <time class="val-data <%-prod.data_publicare.getFullYear()%>" datetime="<%- prod.data_publicare%>">
-                                        <%
-                                            luni = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
-                                            zile_sapt = ["Duminică", "Luni", "Marți", "Miercuri", "Joi", "Vineri", "Sâmbătă"];
-                                        %>
-                                        <%- prod.data_publicare.getDate()%>-<%- 
-                                        luni[prod.data_publicare.getMonth()]%>-<%- 
-                                        prod.data_publicare.getFullYear()%>
-                                        (<%- zile_sapt[prod.data_publicare.getDay()]%>)
-                                    </time>
-                                </p>
-
-                                
-                                <p class="stoc">
-                                    <i class="fa-solid fa-box-open"></i> În stoc: 
-                                    <span class="val-stoc">
-                                        <% var optBool = ""
-                                        if(prod.in_stoc) 
-                                        optBool = "Disponibil";
-                                        else optBool = "Indisponibil";
-                                        %>
-                                        <%- optBool%>
-                                    </span></p>
-                                    
-                                <label class="selecteaza-cos btn btn-info">
-                                Adaugă 
-                                <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
-                            </label>
-                            </div>
-                        </div>
-                        
-                    </article>
-                <% }%>
+            <div class="row"> -->
+                <div class="col-6 col-lg-4">
+                    <label> <div class="numeFiltru">Căutați în descriere:</div>
+                        <textarea class="form-control" id="i_textarea"  placeholder="<%- locals.inpDescriere.slice(0, 45)+"..."%>"></textarea>
+                    </label>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <label> <div class="numeFiltru"> Selectați autorii nedoriți: </div>
+                        <select class="form-select" id="i_sel_multiplu" multiple size="3">
+                            <% for (let autor of locals.autori) {%>
+                                <option value="<%- autor.aut %>"><%- autor.aut %> </option>
+                            <% } %>
+                        </select>
+                    </label>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <div class="filtru" style="display: inline-block;"> <div class="numeFiltru"> Disponibilitate: </div>
+                        <label>Toate
+                            <input class=" form-check-input" id="toateStoc" checked name="gr_rad" type="radio"/> 
+                        </label><br>
+                        <label> În stoc
+                            <input class=" form-check-input" id="trueStoc" name="gr_rad" type="radio"/> 
+                        </label><br>
+                        <label> Indisponibil
+                            <input class=" form-check-input" id="falseStoc" name="gr_rad" type="radio"/> 
+                        </label><br>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
 
-    <%- include("../fragmente/footer") %>
-    </body>
-</html>
+            <div class="row">
+                
+                <div class="col-12 col-lg-8">
+                    <label id="labelPret"> <div class="numeFiltru" style="display: inline-block;">Preț minim: </div>
+                        <div id="containerPret">
+                            <span id="minRange"><%-locals.inputs.min%></span>
+                            <input id="inp-pret" class="form-range" type="range"value="<%-locals.inputs.min%>" 
+                            min="<%-locals.inputs.min%>"  max="<%-locals.inputs.max%>" step = 0.1> 
+                            <span id="maxRange"><%-locals.inputs.max%></span>
+                            <span id="infoRange">(<%-locals.inputs.min%> Lei)</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="filtru" style="display: inline-block;" id="containter-inp-check">
+                        <div class="numeFiltru"> Subcategorie: </div>
+                    <% for(subopt of locals.suboptiuni) { %>
+                        <label for="<%- subopt.unnest%>"> <%- subopt.unnest%></label>
+                        <input id="<%- subopt.unnest%>" class="inp-check form-check-input" name="gr_chck" checked type="checkbox"/> <br>
+                    <% } %>
+                    </div>
+                </div>
+            </div>
+
+            <p id="butoaneFiltrare">
+                <button class="btn btn-primary" id="filtrare"> <i class="bi bi-funnel"></i> <div> Filtreaza </div></button>
+                <button class="btn btn-secondary" id="resetare"> <i class="bi bi-x-circle"></i> <div> Reseteaza </div></button>
+                <button  class="btn btn-secondary" id="sortCrescNume"> <i class="bi bi-sort-down-alt"></i> <div>Sortează crescător  Autor&Preț</div></button>
+                <button class="btn btn-secondary" id="sortDescrescNume"> <i class="bi bi-sort-down"></i> <div>Sorteaza descrescător Autor&Preț</div></button>
+                <button class="btn btn-primary" id="calculare"><i class="bi bi-calculator"></i> <div> Calculare </div></button>
+            </p>
+            
+            <!-- <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p> -->
+            <section id="produse">
+                <h2>Produse</h2>
+                <div class="grid-produse">
+                    <% for(let prod of locals.produse) { %>
+                        <article class="produs <%- prod.categorie%>" id="<%- "ar_ent_" + prod.id%>">
+                            <h3 class="titlu"><a href="/produs/<%-prod.id %>"><span class="val-titlu"><%- prod.titlu%></span></a></h3>
+
+                            <div class="aliniere-col">
+                                <div class="info-prez">
+                                    <p class="categorie"><i class="fa-solid fa-book"></i></i> Categorie: <span class="val-categorie"><%- prod.categorie%></span></p>
+                                    <figure>
+                                        <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.titlu %>]" /></a>
+                                    </figure>
+                                    <p class="descriere"> 
+                                        <i class="fa-solid fa-feather-pointed"></i> Despre: <span class="val-descriere"><%- prod.descriere%></span>
+                                    </p>
+                                </div>
+                                <div class="info-prod">
+                                    <p class="pret">
+                                        <i class="fa-solid fa-dollar-sign"></i> Preț: <span class="val-pret"><%- prod.pret%></span> <span>Lei</span>
+                                    </p>
+
+                                    <p class="suboptiune">
+                                        <i class="fa-solid fa-paperclip"></i> Copertă: <span class="val-subopt"><%- prod.tip_coperta%></span>
+                                    </p>
+
+                                    <p class="autori"> 
+                                        <i class="fa-solid fa-user"></i> Autor(i): <span class="val-autori">
+                                            <% if (prod.autori.length == 0) {%> &mdash; 
+                                            <% } else
+                                                for(let i = 0; i < prod.autori.length - 1; i++){ %>
+                                                <%- prod.autori[i]%>,
+                                            <% } %> 
+                                            <%- prod.autori[prod.autori.length-1]%>
+                                            </span>
+                                    </p>
+
+                                    <p class="data">
+                                        <i class="fa-regular fa-calendar"></i> Data publicării: <br>
+                                        <time class="val-data <%-prod.data_publicare.getFullYear()%>" datetime="<%- prod.data_publicare%>">
+                                            <%
+                                                luni = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
+                                                zile_sapt = ["Duminică", "Luni", "Marți", "Miercuri", "Joi", "Vineri", "Sâmbătă"];
+                                            %>
+                                            <%- prod.data_publicare.getDate()%>-<%- 
+                                            luni[prod.data_publicare.getMonth()]%>-<%- 
+                                            prod.data_publicare.getFullYear()%>
+                                            (<%- zile_sapt[prod.data_publicare.getDay()]%>)
+                                        </time>
+                                    </p>
+
+                                    
+                                    <p class="stoc">
+                                        <i class="fa-solid fa-box-open"></i> În stoc: 
+                                        <span class="val-stoc">
+                                            <% var optBool = ""
+                                            if(prod.in_stoc) 
+                                            optBool = "Disponibil";
+                                            else optBool = "Indisponibil";
+                                            %>
+                                            <%- optBool%>
+                                        </span></p>
+                                        
+                                    <label class="selecteaza-cos btn btn-info">
+                                    Adaugă 
+                                    <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                                </label>
+                                </div>
+                            </div>
+                            
+                        </article>
+                    <% }%>
+                </div>
+            </section>
+        </main>
+
+        <%- include("../fragmente/footer") %>
+        </body>
+    </html>
