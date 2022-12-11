@@ -98,6 +98,8 @@ body{
 
     --culoare-bg-produs: white;
     --culoare-avertizare: #88444C;
+    --culoare-nume-filtru: #435360;
+    --culoare-detalii-produs: #C2878D;
 
     background-color: var(--culoare-bg);
     margin: 0px;
@@ -132,33 +134,33 @@ body{
     --culoare-border-link-top: #D9DBD3;
     --culoare-bg-link-top: #FFF;
     --culoare-bg-sageata: #747571;
-    --culoare-sageata-hover: #6C373D;
-    --culoare-link-top-hover: #EAD6D8;
-    --culoare-border-link-top-hover: #C2878D;
+    --culoare-sageata-hover: #5D4650;
+    --culoare-link-top-hover: #CAB9C0;
+    --culoare-border-link-top-hover: #80606E;
     --culoare-circle: #435360;
     --culoare-icon-circle: #D0D8DD;
     --culoare-h: #EBEBEB;
     --culoare-icons-h: #6C373D;
-    --culoare-quote: #EAD6D8;
-    --culoare-quote-line: #EAD6D8;
+    --culoare-quote: white;
+    --culoare-quote-line: #B9A2AB;
     --culoare-subtitrari: #6C373D;
     --culoare-fundal-subtitrari: white;
     --culoare-selection-background: #435360;
     --culoare-selection-text: #D0D8DD;
     --culoare-galerie-shadow: #435360;
     --culoare-galerie-margin: #D0D8DD;
-    --culoare-reflexie: #C2878D;
+    --culoare-reflexie: #9F7F8D;
     --culoare-link-galerie: #D0D8DD;
     --culoare-hr-background: #545454;
     --culoare-hr-linie: #D0D8DD;
 
-    --culoare-border: #A1B1BA;
-    --culoare-gradient: pink;
+    --culoare-border: #513D45;
+    --culoare-gradient: #B9A2AB;
     --culoare-desc-hover: var(--culoare-bg);
-    --culoare-bg-etich: #E8ECEE;
+    --culoare-bg-etich: #9F7F8D;
 
     --culoare-text-sum: #A1B1BA;
-    --culoare-text-details: #C1858B;
+    --culoare-text-details: #9F7F8D;
     --culoare-border-thead: var(--culoare-bg);
     --culoare-border-tfoot: var(--culoare-bg);
     --culoare-bg-tabel: #292929;
@@ -169,9 +171,49 @@ body{
     --culoare-rand-hover: #A1B1BA;
 
     --culoare-bg-produs: #1f1f1f;
-    --culoare-avertizare: #C1858B;
+    --culoare-avertizare: #9F7F8D;
+    --culoare-nume-filtru: #A1B1BA;
+    --culoare-bg-input: #292929;
+    --culoare-detalii-produs: #9F7F8D;
+
 }
 
+.dark .btn-secondary{
+    --bs-btn-color: white;
+    --bs-btn-bg: #5D737E;
+    --bs-btn-border-color: #5D737E;
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: #68818D;
+    --bs-btn-hover-border-color: #68818D;
+    --bs-btn-focus-shadow-rgb: 184, 186, 179;
+    --bs-btn-active-color: white;
+    --bs-btn-active-bg: #68818D;
+    --bs-btn-active-border-color: #68818D;
+}
+
+.dark .btn-info, .dark .btn-primary {
+    --bs-btn-color: white;
+    --bs-btn-bg: #9F7F8D;
+    --bs-btn-border-color: #9F7F8D;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #B096A1;
+    --bs-btn-hover-border-color: #B096A1;
+    --bs-btn-focus-shadow-rgb: 176, 136, 140;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #B096A1;
+    --bs-btn-active-border-color: #B096A1;
+}
+.dark h3 {
+    color: #CAB9C0;
+}
+
+.dark #q-dr img{
+    content: url(/resurse/imagini/quote-dr-dark.png);
+}
+
+.dark #q-st img{
+    content: url(/resurse/imagini/quote-st-dark.png);
+}
 
 .christmas {
     --culoare-text: #000;
@@ -183,9 +225,9 @@ body{
     --culoare-border-link-top: #D9DBD3;
     --culoare-bg-link-top: #FFF;
     --culoare-bg-sageata: #747571;
-    --culoare-sageata-hover: #6C373D;
-    --culoare-link-top-hover: #EAD6D8;
-    --culoare-border-link-top-hover: #C2878D;
+    --culoare-sageata-hover: #BC574E;
+    --culoare-link-top-hover: white;
+    --culoare-border-link-top-hover: #e5c5bd;
     --culoare-circle: #D9DBD3;
     --culoare-icon-circle: #57695a;
     --culoare-h: #57695a;
@@ -198,7 +240,7 @@ body{
     --culoare-selection-text: #6C373D;
     --culoare-galerie-shadow: #435360;
     --culoare-galerie-margin: #D9DBD3;
-    --culoare-reflexie: #C2878D;
+    --culoare-reflexie: #ab4a41;
     --culoare-link-galerie: #747571;
     --culoare-hr-background: #D9DBD3;
     --culoare-hr-linie: white;
@@ -218,19 +260,44 @@ body{
     --culoare-border-thead: #fafbf7;
     --culoare-border-tfoot: #fafbf7;
     --culoare-bg-tabel: #D9DBD3;
-    --culoare-bg-thead: #435360;
+    --culoare-bg-thead: #57695a;
     --culoare-text-thead: #fafbf7;
-    --culoare-border-c1: #5D737E;
-    --culoare-border-c2: #A1B1BA;
-    --culoare-rand-hover: #435360;
+    --culoare-border-c1: white;
+    --culoare-border-c2: white;
+    --culoare-rand-hover: #57695a;
     --culoare-hr: #D9DBD3;
     --culoare-shadow-img: #D9DBD3;
     --culoare-bg-produs: white;
     --culoare-avertizare: #ab4a41;
+    --culoare-nume-filtru: #57695a;
+    --culoare-detalii-produs: #ab4a41;
 
 }    
 
-
+.christmas .btn-info {
+    --bs-btn-color: white;
+    --bs-btn-bg: #ab4a41;
+    --bs-btn-border-color: #ab4a41;
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: #BC574E;
+    --bs-btn-hover-border-color: #BC574E;
+    --bs-btn-focus-shadow-rgb: 176, 136, 140;
+    --bs-btn-active-color: white;
+    --bs-btn-active-bg: #BC574E;
+    --bs-btn-active-border-color: #BC574E;
+}
+.christmas .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #57695a;
+    --bs-btn-border-color: #57695a;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #667A69;
+    --bs-btn-hover-border-color: #667A69;
+    --bs-btn-focus-shadow-rgb: 95, 109, 120;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #667A69;
+    --bs-btn-active-border-color: #667A69;
+}
 .christmas #logo{
     content: url(/resurse/imagini/logo-chr.png);
 }
@@ -242,6 +309,14 @@ body{
 .christmas #bookshelf-img {
     display: block;
     content: url(/resurse/svg/christmas.svg);
+}
+
+.christmas #q-dr img{
+    content: url(/resurse/imagini/quote-dr-chr.png);
+}
+
+.christmas #q-st img{
+    content: url(/resurse/imagini/quote-st-chr.png);
 }
 
 #tema { 

@@ -121,6 +121,10 @@ $neafis: inset(50% 0%);
 
 }
 
+.dark .galerie-a figcaption {
+    background: rgba(0,0,0, 0.7);
+}
+
 @media screen and (max-width: 1000px){
 	#galerie-animata, #text{
 		display: none;
