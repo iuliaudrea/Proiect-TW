@@ -109,6 +109,10 @@ window.addEventListener("load", function(){
                     color: var(--culoare-avertizare);
                     font-weight: bold;
                 `}
+        } else {
+            if(document.getElementById("mesaj")) {
+                document.getElementById("mesaj").remove();
+            }
         }
     }
 
