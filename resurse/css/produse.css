@@ -7,7 +7,7 @@
     row-gap: 3rem;
 }
 
-#produse h2 {
+#produse > h2 {
     font-size: 1.8rem;
     font-weight: bold;
     margin-top: 2rem;
@@ -21,7 +21,7 @@
 .produs{
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 35%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 20px;
     border-radius: 40px;
@@ -58,14 +58,14 @@
 
 
 .info-prez{
-    width: 60%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .info-prod {
-    width: 35%;
+    width: 40%;
 }
 
 .produs img {
@@ -90,7 +90,7 @@
 
 .numeFiltru{
     position: relative;
-    margin: 0.5rem 0 1rem 0;
+    margin: 1rem 0 0.5rem 0;
     padding-bottom: 0.5rem;
     font-weight: 600;
     color: var(--culoare-nume-filtru);
@@ -199,6 +199,56 @@ main .row{
 
 .val-descriere{
     font-size: 90%;
+}
+
+.accordion {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.accordion h2 {
+    margin: 0.5rem;
+}
+
+.accordion button {
+    font-weight: bold;
+}
+
+.accordion-body{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.dark .accordion {
+    --bs-accordion-color: var(--culoare-text);
+    --bs-accordion-btn-color: #9F7F8D;
+    --bs-accordion-active-color: #9F7F8D;
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%239F7F8D'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%239F7F8D'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.christmas .accordion {
+    --bs-accordion-color: var(--culoare-text);
+    --bs-accordion-btn-color: #ab4a41;
+    --bs-accordion-active-color: #ab4a41;
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23AB4A41'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23AB4A41'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+@media screen and (max-width:1300px){
+    .produs {
+        width: 40%;
+    }
+
+    .produs img {
+        width: 150px;
+        max-height: 250px;
+    }
+
+    .produs figure {
+        height: 250px;
+    }
+
 }
 
 @media screen and (max-width:1000px){

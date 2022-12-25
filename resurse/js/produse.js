@@ -1,9 +1,6 @@
 window.addEventListener("load", function(){
 
-    document.getElementById("inp-pret").oninput = function(){
-        document.getElementById("infoRange").innerHTML = 
-            "("+ parseFloat(this.value).toFixed(2) + " Lei)";
-    }
+    
 
     document.getElementById("i_textarea").oninput = function() {
         if(!this.value.toLowerCase().trim().match(new RegExp("^[a-zA-Z\- 0-9]*$"))) {
@@ -21,7 +18,8 @@ window.addEventListener("load", function(){
         }
     }
 
-    document.getElementById("filtrare").onclick = function(){
+    // document.getElementById("filtrare").onclick = function(){
+    function filtreaza() {
         //verificare input-uri
         condValidare = true;
         var inpNume = document.getElementById("inp-nume").value.toLowerCase().trim();
@@ -93,10 +91,10 @@ window.addEventListener("load", function(){
 
         }
 
-        
+        elemMesaj = document.getElementById("mesaj");
         if(!nrProd) {
             
-            if(!document.getElementById("mesaj")) {
+            if(!elemMesaj) {
                 mesaj = document.createElement("p");
                 mesaj.id = "mesaj";
                 mesaj.innerHTML = "Niciun produs nu corespunde filtrării!";
@@ -110,8 +108,8 @@ window.addEventListener("load", function(){
                     font-weight: bold;
                 `}
         } else {
-            if(document.getElementById("mesaj")) {
-                document.getElementById("mesaj").remove();
+            if(elemMesaj) {
+                elemMesaj.remove();
             }
         }
     }
@@ -177,7 +175,8 @@ window.addEventListener("load", function(){
             }
         }
 
-        suma = suma / nr_prod;
+        if(nr_prod == 0) suma = 0;
+        else suma = suma / nr_prod;
 
         if(!document.getElementById("rezultat")) {
             rezultat = document.createElement("div");
@@ -198,9 +197,6 @@ window.addEventListener("load", function(){
                 border-radius: 0.5rem;
                 color: var(--culoare-icon-circle);
             `
-            // rezultat.onclick = function() {
-            //     this.remove();
-            // }
 
             setTimeout(function(){
                 document.getElementById("rezultat").remove();
@@ -238,4 +234,25 @@ window.addEventListener("load", function(){
 
     //     }
     // }
+
+    // filtrare la schimbarea inputurilor
+    // document.getElementById("filtrare").onclick  = filtreaza;
+    // this.document.getElementById("inp-nume").onchange = filtreaza;
+    document.getElementById("inp-nume").oninput = filtreaza;
+    document.getElementById("i_datalist").oninput = filtreaza;
+    document.getElementById("inp-categorie").oninput = filtreaza;
+    document.getElementById("i_textarea").oninput = filtreaza;
+    document.getElementById("i_sel_multiplu").oninput = filtreaza;
+    document.getElementById("inp-pret").oninput = function(){
+        filtreaza();
+        document.getElementById("infoRange").innerHTML = 
+            "("+ parseFloat(this.value).toFixed(2) + " Lei)";
+    }
+
+
+    checkInp = this.document.getElementsByClassName("form-check-input");
+    for(elem of checkInp){
+        elem.onchange = filtreaza;
+    }
+
 });

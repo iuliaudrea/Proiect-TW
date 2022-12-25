@@ -100,12 +100,20 @@ body{
     --culoare-avertizare: #88444C;
     --culoare-nume-filtru: #435360;
     --culoare-detalii-produs: #C2878D;
+    --culoare-bg-cookie-st: #D9DBD3;
+    --culoare-bg-cookie-fin: white;
+    --culoare-box-shadow: rgb(0 0 0 / 35%);
 
+    --culoare-text-meniu-highlight: #AD5C64;
+    --culoare-text-pret: white;
+    --culoare-bg-pret: #9F7F8D;
+}
+
+body {
     background-color: var(--culoare-bg);
     margin: 0px;
     padding: 0px;
     color: var(--culoare-text);
-
 }
 
 .dark #logo {
@@ -175,6 +183,13 @@ body{
     --culoare-nume-filtru: #A1B1BA;
     --culoare-bg-input: #292929;
     --culoare-detalii-produs: #9F7F8D;
+
+    --culoare-bg-cookie-st: white;
+    --culoare-bg-cookie-fin: black;
+    --culoare-box-shadow: rgb(255 255 255 / 35%);
+
+    --culoare-text-pret: white;
+    --culoare-bg-pret: #9F7F8D;
 
 }
 
@@ -271,6 +286,9 @@ body{
     --culoare-avertizare: #ab4a41;
     --culoare-nume-filtru: #57695a;
     --culoare-detalii-produs: #ab4a41;
+
+    --culoare-text-pret: white;
+    --culoare-bg-pret: #ab4a41;
 
 }    
 
@@ -736,6 +754,62 @@ video::cue{
 
 }
 
-#banner, #watermark{
+#watermark{
     display: none;
 }
+
+/* ###### STILIZARE BANNER COOKIE #### */
+
+
+#banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+    width: 25vw;
+    height: 25vw;
+    font-size: 1.2vw;
+    color: var(--culoare-text);
+    transform-origin: bottom left;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: var(--culoare-box-shadow) 0px 0px 10px;
+    opacity: 0.75;
+    background-color: var(--culoare-bg-cookie-fin);
+    transform: scale(1);
+}
+
+#mesaj-cookies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--culoare-text);
+}
+
+#ok_cookie {
+    margin-top: 1em;
+    font-size: 1em;
+}
+
+@keyframes animatie_cookie {
+    0% {
+        opacity: 0;
+        background-color: var(--culoare-bg-cookie-st);
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 0.75;
+        background-color: var(--culoare-bg-cookie-fin);
+        transform: scale(1);
+    }
+}
+
+
+/* @media screen and (max-width: 1000px) {
+    #banner { animation: none;}
+} */
+

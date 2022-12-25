@@ -1,6 +1,7 @@
 nav {
     --inaltime-meniu: 50px;
     --inaltime-meniu-mic: 30px;
+    --latime-buton: 180px;
 
     height: var(--inaltime-meniu);
     background-color: var(--culoare-meniu);
@@ -23,7 +24,9 @@ ul.meniu {
     flex-direction: row;
     justify-content: center;
     text-transform: uppercase;
-    font-family: 'Old Standard TT', serif;
+    // font-family: 'Old Standard TT', serif;
+    font-family: 'Lora', serif;
+
 
     li{ 
 
@@ -69,8 +72,8 @@ ul.meniu {
             border-radius: 5px;
             background-image: linear-gradient(
                 to right,
-                var(--culoare-meniu) 0%,
-                var(--culoare-meniu) 50%,
+                transparent 0%,
+                transparent 50%,
                 var(--culoare-bara-gradient) 100%
             );
             background-size: 200%;

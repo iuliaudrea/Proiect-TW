@@ -2,10 +2,8 @@ nav {
   --inaltime-meniu: 50px;
   --inaltime-meniu-mic: 30px;
   --latime-buton: 180px;
-  
   height: var(--inaltime-meniu);
   background-color: var(--culoare-meniu);
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 15;
@@ -24,7 +22,7 @@ ul.meniu {
   flex-direction: row;
   justify-content: center;
   text-transform: uppercase;
-  font-family: "Old Standard TT", serif;
+  font-family: "Lora", serif;
 }
 ul.meniu li {
   background-color: var(--culoare-meniu);
@@ -39,16 +37,11 @@ ul.meniu li a {
   transition: all 0.4s linear;
 }
 ul.meniu li:hover ul {
-  -webkit-animation-name: animatie-submeniu;
-          animation-name: animatie-submeniu;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: animatie-submeniu;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   transform-origin: 50% 50%;
   display: block;
 }
@@ -68,7 +61,7 @@ ul.meniu > li > a::after {
   height: calc(0.2 * var(--inaltime-meniu));
   width: 100%;
   border-radius: 5px;
-  background-image: linear-gradient(to right, var(--culoare-meniu) 0%, var(--culoare-meniu) 50%, var(--culoare-bara-gradient) 100%);
+  background-image: linear-gradient(to right, transparent 0%, transparent 50%, var(--culoare-bara-gradient) 100%);
   background-size: 200%;
   transition: all 0.5s linear;
 }
@@ -89,15 +82,6 @@ ul.meniu ul a:hover {
   color: var(--culoare-text-meniu-contrast);
 }
 
-@-webkit-keyframes animatie-submeniu {
-  0% {
-    transform: scaleY(0);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
-
 @keyframes animatie-submeniu {
   0% {
     transform: scaleY(0);
@@ -113,4 +97,4 @@ ul.meniu ul a:hover {
   #text-acasa {
     display: none;
   }
-}/*# sourceMappingURL=nav.css.map */
+}

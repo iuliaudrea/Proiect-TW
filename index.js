@@ -5,8 +5,11 @@ const {Client} = require("pg");
 const ejs = require("ejs");
 const sass = require("sass");
 var cssBootstrap=sass.compile(__dirname+"/resurse/scss/customizare-bootstrap.scss",{sourceMap:true});
+var cssNav = sass.compile(__dirname+"/resurse/scss/nav.scss",{sourceMap:true}); 
 
 fs.writeFileSync(__dirname+"/resurse/css/biblioteci/bootstrap-custom.css",cssBootstrap.css);
+fs.writeFileSync(__dirname+"/resurse/css/nav.css", cssNav.css);
+
 
 var client = new Client({
     database:"laborator",
@@ -170,10 +173,6 @@ app.get("*/galerie-animata.css",function(req, res){
 
     var sirScss=fs.readFileSync(__dirname+"/resurse/scss/galerie_animata.scss").toString("utf8");
     rezScss = ejs.render(sirScss, {nrimag: obGlobal.nrimag});
-    // rezScss = ejs.render(sirScss, {nrimag:16});
-
-    // console.log("Nr imag in app get: "+ obGlobal.nrimag);
-    // console.log(rezScss);
     
     var caleScss=__dirname+"/temp/galerie_animata.scss"
     fs.writeFileSync(caleScss, rezScss);

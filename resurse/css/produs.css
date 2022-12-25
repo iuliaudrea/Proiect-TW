@@ -17,7 +17,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.dark #art-produs img {
+.dark #art-produs img, .dark #ultimulProdus img{
     box-shadow: rgb(255 255 255 / 40%) 0px 5px 15px;
 }
 
@@ -96,6 +96,51 @@
     }
 }
 
+
+
+/* STILIAZRE AFISARE ULTIMUL PRODUS */
+
+
+#ultimulProdus{
+    display: none;
+    /* width: 80%; */
+}
+
+#ultimulProdus img {
+    width: 200px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    margin-bottom: 1rem;
+}
+
+#ultimulProdus figure {
+    width: max-content;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ultimulProdus figcaption {
+    width: 300px; 
+    /* font-size: 0.9em; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+#ultPret {
+    margin-top: 0.5em;
+    padding: 0.5rem 1em;
+    border-radius: 1.5em;
+    /* background-color: var(--culoare-bg-pret);
+    color: var(--culoare-text-pret); */
+    background-color: var(--culoare-circle);
+    color: var(--culoare-icon-circle);
+    font-weight: bold;
+    width: max-content;
+}
 
 @media screen and (max-width: 750px) {
     #art-produs img {

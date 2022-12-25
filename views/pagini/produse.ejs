@@ -15,7 +15,7 @@
 
             <div class="row">
                 <div class="col-6 col-lg-4">
-                    <label> <div class="numeFiltru">Caută după autor: </div>
+                    <label> <div class="numeFiltru">Căutați după autor: </div>
                         <input  class="form-control" type="text" id="inp-nume"  placeholder="<%- locals.inpAutor%>"></label>
                 </div>
                 <div class="col-6 col-lg-4">
@@ -86,7 +86,7 @@
 
                 <div class="col-12 col-lg-4">
                     <div class="filtru" style="display: inline-block;" id="containter-inp-check">
-                        <div class="numeFiltru"> Subcategorie: </div>
+                        <div class="numeFiltru"> Tip copertă: </div>
                     <% for(subopt of locals.suboptiuni) { %>
                         <label for="<%- subopt.unnest%>"> <%- subopt.unnest%></label>
                         <input id="<%- subopt.unnest%>" class="inp-check form-check-input" name="gr_chck" checked type="checkbox"/> <br>
@@ -117,9 +117,10 @@
                                     <figure>
                                         <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.titlu %>]" /></a>
                                     </figure>
-                                    <p class="descriere"> 
+                                    <!-- <p class="descriere"> 
                                         <i class="fa-solid fa-feather-pointed"></i> Despre: <span class="val-descriere"><%- prod.descriere%></span>
-                                    </p>
+                                    </p> -->
+                                    
                                 </div>
                                 <div class="info-prod">
                                     <p class="pret">
@@ -173,7 +174,20 @@
                                 </label>
                                 </div>
                             </div>
-                            
+                            <div class="accordion accordion-flush" id="accordionExample<%-prod.id%>">
+                                        <div class="accordion-item">
+                                          <h2 class="accordion-header" id="heading<%-prod.id%>">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%-prod.id%>" aria-expanded="false" aria-controls="collapse<%-prod.id%>">
+                                                <i class="fa-solid fa-feather-pointed"></i> Descriere:
+                                            </button>
+                                          </h2>
+                                          <div id="collapse<%-prod.id%>" class="accordion-collapse collapse" aria-labelledby="heading<%-prod.id%>" data-bs-parent="#accordionExample<%-prod.id%>">
+                                            <div class="accordion-body">
+                                                <%- prod.descriere%>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
                         </article>
                     <% }%>
                 </div>

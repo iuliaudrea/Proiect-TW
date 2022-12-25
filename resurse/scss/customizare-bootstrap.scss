@@ -23,5 +23,19 @@
     $form-range-thumb-bg: #435360,
     $form-range-track-bg:  #D9DBD3,
     $form-range-thumb-active-bg: tint-color(#435360, 70%),
-    $input-padding-x: 0.5rem
+    $input-padding-x: 0.5rem,
+
+
+    $accordion-button-color: #C2878D,
+    $accordion-icon-color:#C2878D,
+    $accordion-icon-active-color:#C2878D,
+    $accordion-button-active-color: #C2878D,
+    $accordion-bg: transparent,
+    $accordion-button-bg: transparent,
+    $accordion-button-active-bg:  transparent,
+    $accordion-button-padding-x: 0,
+    $accordion-button-padding-y: 0,
+    $accordion-border-width: 0,
+    $accordion-button-focus-border-color: 0,
+    $accordion-button-focus-box-shadow: none
 );
