@@ -1,0 +1,44 @@
+#tabel_factura body{
+    counter-reset: indice 0;
+}
+
+#tabel_factura tbody tr{
+    counter-increment: indice 1;
+}
+
+#tabel_factura tbody tr td:nth-child(1)::after {
+    content: counter(indice);
+    text-align: center;
+}
+
+
+#tabel_factura thead th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: black;
+  }
+
+#tabel_factura tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#container-tabel-factura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#tabel_factura td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+#tabel_factura tfoot td{
+    text-align: right;
+}
+
+#tabel-factura{
+    border-collapse:collapse;
+}

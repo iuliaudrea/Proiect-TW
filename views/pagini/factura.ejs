@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Factură</title>
+		<style>
+			p{color:grey};
+			
+		</style>
+		<link rel="stylesheet" href="<%- locals.protocol%><%- locals.domeniu %>/resurse/css/factura.css" type="text/css">
+		<script src="<%- locals.protocol%><%- locals.domeniu %>/resurse/js/factura.js"></script>
+	</head>
+	<body>
+		<h1>Factură Gaudeamus</h1>
+		<p>Stimate utilizator <%-locals.utilizator.prenume %> <%-locals.utilizator.nume %>, aveți aici lista de produse achiziționate.</p> 
+		<div id="container-tabel-factura">
+			<p>Cod QR utilizator:</p>
+			<img src="<%- locals.protocol%><%- locals.domeniu %>/resurse/imagini/qrcode/<%-locals.utilizator.id %>.png">
+			<table id="tabel_factura">
+				<thead>
+					<tr>
+						<th>Indice</th>
+						<th>Imagine</th>
+						<th>Produs</th>
+						<th>Autori</th>
+						<th>Editura</th>
+						<th>Categorie</th>
+						<th>Preț</th>
+						<th>Cantitate</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<% 
+					var suma=0;
+					for (let prod of locals.produse) {
+						let poz = locals.iduri.indexOf(prod.id.toString())
+						let cant = locals.cantitati[poz]
+						suma += parseFloat(prod.pret)*cant;
+						let caleImagine = `${locals.protocol}${locals.domeniu}/resurse/imagini/produse/${prod.imagine}`
+						%>
+						<tr>
+							<td></td>
+							<td><img src="<%-caleImagine%>" style="width: 120px; height: 180px;" alt="<%-prod.titlu%>"></td>
+							<td><%-prod.titlu %></td>
+							<td><%-prod.autori%></td>
+							<td><%-prod.editura%></td>
+							<td><%-prod.categorie%></td>
+							<td><%-prod.pret %></td>
+							<td><%-cant%></td>
+						</tr>
+					<% } %>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="8">Total: <%- suma %></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</body>
+</html>

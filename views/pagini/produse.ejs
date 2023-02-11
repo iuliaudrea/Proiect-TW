@@ -1,12 +1,17 @@
     <!DOCTYPE html>
     <html  lang="ro">
         <head>
-            <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
-            <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+            <meta name="description" content="Libraria Gaudeamus ofera biografii, audiobook-uri, bestsellere cu optiunea de achizitie online si livrare prin curier.">
+            <meta name="keywords" content="librarie, Gaudeamus, carti, produse, biografii, audiobook, bestseller">
             <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
             <title>Produse | Gaudeamus</title>
             <%- include("../fragmente/head") %>
             <script type="text/javascript" src=/resurse/js/produse.js></script>
+            <style>
+                .produs_indisp {
+                    color:gray !important;
+                }
+            </style>
         </head>
         <body>
         <%- include("../fragmente/header") %>
@@ -56,11 +61,11 @@
                     </label>
                 </div>
                 <div class="col-6 col-lg-4">
-                    <div class="filtru" style="display: inline-block;"> <div class="numeFiltru"> Disponibilitate: </div>
+                    <div class="filtru" style="display: inline-block;"> <div class="numeFiltru"> Semn de carte: </div>
                         <label>Toate
                             <input class=" form-check-input" id="toateStoc" checked name="gr_rad" type="radio"/> 
                         </label><br>
-                        <label> În stoc
+                        <label> Disponibil
                             <input class=" form-check-input" id="trueStoc" name="gr_rad" type="radio"/> 
                         </label><br>
                         <label> Indisponibil
@@ -107,31 +112,33 @@
             <section id="produse">
                 <h2>Produse</h2>
                 <div class="grid-produse">
-                    <% for(let prod of locals.produse) { %>
+                    <% for(let prod of locals.produse) {
+                        let clasa = ""
+                        if(prod.stoc == 0)
+                        clasa = "produs_indisp"
+
+                        %>
                         <article class="produs <%- prod.categorie%>" id="<%- "ar_ent_" + prod.id%>">
                             <h3 class="titlu"><a href="/produs/<%-prod.id %>"><span class="val-titlu"><%- prod.titlu%></span></a></h3>
 
                             <div class="aliniere-col">
                                 <div class="info-prez">
-                                    <p class="categorie"><i class="fa-solid fa-book"></i></i> Categorie: <span class="val-categorie"><%- prod.categorie%></span></p>
+                                    <p class="categorie <%-clasa%>"><i class="fa-solid fa-book"></i></i> Categorie: <span class="val-categorie"><%- prod.categorie%></span></p>
                                     <figure>
                                         <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.titlu %>]" /></a>
                                     </figure>
-                                    <!-- <p class="descriere"> 
-                                        <i class="fa-solid fa-feather-pointed"></i> Despre: <span class="val-descriere"><%- prod.descriere%></span>
-                                    </p> -->
                                     
                                 </div>
-                                <div class="info-prod">
-                                    <p class="pret">
+                                <div class="info-prod <%-clasa%>">
+                                    <p class="pret <%-clasa%>">
                                         <i class="fa-solid fa-dollar-sign"></i> Preț: <span class="val-pret"><%- prod.pret%></span> <span>Lei</span>
                                     </p>
 
-                                    <p class="suboptiune">
+                                    <p class="suboptiune <%-clasa%>">
                                         <i class="fa-solid fa-paperclip"></i> Copertă: <span class="val-subopt"><%- prod.tip_coperta%></span>
                                     </p>
 
-                                    <p class="autori"> 
+                                    <p class="autori <%-clasa%>"> 
                                         <i class="fa-solid fa-user"></i> Autor(i): <span class="val-autori">
                                             <% if (prod.autori.length == 0) {%> &mdash; 
                                             <% } else
@@ -142,7 +149,7 @@
                                             </span>
                                     </p>
 
-                                    <p class="data">
+                                    <p class="data <%-clasa%>">
                                         <i class="fa-regular fa-calendar"></i> Data publicării: <br>
                                         <time class="val-data <%-prod.data_publicare.getFullYear()%>" datetime="<%- prod.data_publicare%>">
                                             <%
@@ -156,9 +163,16 @@
                                         </time>
                                     </p>
 
+                                    <p class=" <%-clasa%>">
+                                        <i class="fa-solid fa-box-open"></i> Stoc:
+                                        <span>
+                                            <%- prod.stoc%> bucăți
+                                        </span>
+                                    </p>
+
                                     
-                                    <p class="stoc">
-                                        <i class="fa-solid fa-box-open"></i> În stoc: 
+                                    <p class="stoc <%-clasa%>">
+                                        <i class="fa-solid fa-bookmark"></i> Semn carte: 
                                         <span class="val-stoc">
                                             <% var optBool = ""
                                             if(prod.in_stoc) 
@@ -167,18 +181,25 @@
                                             %>
                                             <%- optBool%>
                                         </span></p>
+                                    
+                                    <input type="number" class="cant-cos form-control" id="cant<%-prod.id%>" max="<%-prod.stoc%>" min="0"
+                                    style="margin-bottom: 1rem;">
                                         
-                                    <label class="selecteaza-cos btn btn-info">
-                                    Adaugă 
-                                    <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
-                                </label>
+                                    <% if(prod.stoc == 0){%>
+                                        <label class="selecteaza-cos disabled btn btn-info" disabled>
+                                        <% } else { %> 
+                                        <label class="selecteaza-cos btn btn-info">
+                                        <% } %>
+                                        Adaugă 
+                                            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                                    </label>
                                 </div>
                             </div>
-                            <div class="accordion accordion-flush" id="accordionExample<%-prod.id%>">
+                            <div class="accordion accordion-flush val-descriere" id="accordionExample<%-prod.id%>">
                                         <div class="accordion-item">
                                           <h2 class="accordion-header" id="heading<%-prod.id%>">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%-prod.id%>" aria-expanded="false" aria-controls="collapse<%-prod.id%>">
-                                                <i class="fa-solid fa-feather-pointed"></i> Descriere:
+                                            <button class="accordion-button collapsed <%-clasa%>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%-prod.id%>" aria-expanded="false" aria-controls="collapse<%-prod.id%>">
+                                                <i class="fa-solid fa-feather-pointed"></i> &nbsp; Descriere:
                                             </button>
                                           </h2>
                                           <div id="collapse<%-prod.id%>" class="accordion-collapse collapse" aria-labelledby="heading<%-prod.id%>" data-bs-parent="#accordionExample<%-prod.id%>">

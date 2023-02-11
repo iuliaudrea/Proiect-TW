@@ -2339,7 +2339,7 @@ textarea.form-control-lg {
   }
 }
 .form-range::-webkit-slider-thumb:active {
-  background-color: tint-color(#435360, 70%);
+  background-color: tint-color(#435360, 50%);
 }
 .form-range::-webkit-slider-runnable-track {
   width: 100%;
@@ -2365,7 +2365,7 @@ textarea.form-control-lg {
   }
 }
 .form-range::-moz-range-thumb:active {
-  background-color: tint-color(#435360, 70%);
+  background-color: tint-color(#435360, 50%);
 }
 .form-range::-moz-range-track {
   width: 100%;

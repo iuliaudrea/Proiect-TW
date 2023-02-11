@@ -23,6 +23,7 @@
         <p id="watermark"></p>
         
         <main>
+            
             <div id="grid-pagina">
                 <section id="prezentare">
                     <h2>Bine ați venit la <b>Librăria Gaudeamus</b>!</h2>
@@ -356,7 +357,18 @@
 
                 <section id="util-online">
                     <h2>Listă utilizatori online</h2>
-                    Ip-ul dumneavoastră este <%- locals.ip %>
+                    <p>Ip-ul dumneavoastră este <%- locals.ip %></p>
+                    
+                    <% if(locals.useriOnline.length > 0) {%>
+                        Utilizatori online:
+                        <ol reversed>
+                            <% for(let u of locals.useriOnline){ %>
+                                <li> 
+                                    <%-u.username%> - <%-u.prenume%> <%-u.nume%>
+                                </li>
+                            <% } %>
+                        </ol>
+                    <% } %>
                 </section>
 
                 <section id="statistici">

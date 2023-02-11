@@ -1,0 +1,61 @@
+<form id="form_inreg"  method="post" class="date"  action="<%= locals.action %>"  enctype="multipart/form-data">
+    <p>
+        <label>
+            Username: <input type="text"  class="form-control" name="username" id="inp-username" value="Cititor<%= Math.floor(Math.random()*100000) %>" required pattern="[A-Za-z0-9]+">
+        </label>
+    </p>
+    <p>
+        <label>
+            Nume: <input type="text" class="form-control" name="nume" id="inp-nume" required value="Gogulescu" >
+        </label>
+    </p>
+    <p>
+        <label>
+            Prenume: <input type="text"  class="form-control" name="prenume" id="inp-prenume"  required value="Gogu"  >
+        </label>
+    </p>
+    <p>
+        <label>
+            Parola: <input id="parl"  class="form-control" type="password" required  name="parola" value="">
+        </label>
+    </p>
+    <p id="p-reintrod">
+        <label >
+            Reintroduceti parola: <input id="rparl"  class="form-control" required type="password" name="rparola" value="">
+        </label>
+    </p>
+    <p id="p-modif">
+        <label>
+            Modificare parola: <input id="mparl"  class="form-control" type="password" required  name="mparola" value="">
+        </label>
+    </p>
+    <p>
+        <label>
+            Email: <input type="text"  class="form-control" name="email" id="inp-email" required>
+        </label>
+    </p>
+    <p>
+        <label>
+            Data nașterii: <input type="date" class="form-control" name="data_nasterii" id="data_nasterii" required>
+        </label>
+    </p>
+    <p>
+        <label>
+            Problemă vedere: <input type="checkbox" class="form-check-input" name="problema_vedere" id="problema_vedere" >
+        </label>
+    </p>
+    <p>
+        <label>
+            Culoare text chat: <select class="form-select" name="culoare_chat" id="sel-culoare"><option value="red" selected>rosu</option><option value="green">verde</option><option value="blue">albastru</option></select>
+        </label>
+    </p>
+    <p>
+        <label>
+            Poza: <input class="form-control" type="file"  class="form-control-file"  name="poza">
+        </label>			
+    </p>
+    <p class="butoane_inreg">		
+        <input class="btn btn-primary" type="submit" value="Trimite">
+        <input class="btn btn-primary" type="reset" value="Reseteaza">
+    </p>
+</form>

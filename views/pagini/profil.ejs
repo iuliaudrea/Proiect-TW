@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<title>Profil</title>
+		<%- include("../fragmente/head") %>
+        
+		<link rel="stylesheet" type="text/css" href="/resurse/css/profil.css" />
+		<link rel="stylesheet" type="text/css" href="/resurse/css/formular.css" />
+
+		<% if(locals.utilizator) { %>
+		<script>
+
+			// populez inputurile din pagina de profil cu datele din tabel (incarcate prin EJS)
+			window.addEventListener("DOMContentLoaded", function(){
+				document.getElementById("inp-username").value="<%= locals.utilizator.username %>";
+				document.getElementById("inp-username").readOnly=true;
+				document.getElementById("inp-nume").value="<%= locals.utilizator.nume %>";
+				document.getElementById("inp-prenume").value="<%= locals.utilizator.prenume %>";
+				document.getElementById("inp-email").value="<%= locals.utilizator.email %>";
+				if("<%= locals.utilizator.problema_vedere%>"=="true"){
+					document.getElementById("problema_vedere").checked=true;
+				} else {
+					document.getElementById("problema_vedere").checked=false;
+				}
+				document.getElementById("data_nasterii").value="<%=locals.utilizator.data_nasterii%>";
+				document.getElementById("p-reintrod").remove();
+				document.getElementById("mparl").required = false;
+				var optiuni=document.getElementById("sel-culoare").options
+				for (let opt of optiuni)
+					if (opt.value=="<%= locals.utilizator.culoare_chat %>")
+						opt.selected=true;
+			});
+		</script>
+		<% } %>
+	</head>
+	<body class="profil">
+		<%- include("../fragmente/header") %>
+		<main>
+			<% if(locals.utilizator) { %>
+			<section>
+				<h2>Profil</h2>
+				<p><%= locals.raspuns %></p>
+			</section>
+			<section class="date">
+				<div class="img_profil">
+					<%
+					poza = '/resurse/imagini/poza_default.png'
+					if(locals.utilizator.poza) poza = "/" + locals.utilizator.poza;
+					%>
+					<img src="<%-poza%>" alt="Nu ati incarcat poza de profil" />
+				</div>
+				<div class="info_profil">
+					<%- include("../fragmente/formular",{action:"/profil"}) %>
+					<% } else { %>
+						<p>Nu sunteti logat!</p>
+					<% } %>
+				</div>
+				
+			</section>
+			
+	</main>
+
+	<%- include("../fragmente/footer") %>
+		
+	</body>
+</html>

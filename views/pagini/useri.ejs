@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cofetaria Dulcelind - utilizatori.">
+        <meta name="keywords" content="cofetarie, Dulcelind, utilizatori">
+        <link rel="stylesheet" href="/resurse/css/useri.css" type="text/css" />
+        <title>Gaudeamus | Utilizatori</title>
+        <%- include("../fragmente/head") %>     
+        <script type="text/javascript" src=/resurse/js/produse.js></script>
+    </head>
+	<style>
+		td, th {
+		margin: 0 auto;
+		text-align: center;
+	}
+
+		img {
+			border-radius: 50%;
+		}
+	</style>
+	
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+    <div>
+        <h2>Useri</h2>
+
+		<table class="table table-hover table-striped" id="useri">
+		  <thead class="thead-light">
+			<tr>
+				<th>Poza</th>
+				<th>Username</th>
+				<th>Problemă vedere</th>
+				<th>Șterge poza</th>
+			</tr>
+		  </thead>
+
+		  <tbody>
+			<% for (var i = 0; i < useri.length; i++) { 
+					if(useri[i].id!=locals.utilizator.id){
+					%>
+					<tr>
+						<% let caleImagine = '/resurse/imagini/poza_default.png'
+						if(useri[i].poza)
+							caleImagine = `/poze_uploadate/${useri[i].username}/${useri[i].poza}`%>
+							
+						<td><img src="<%-caleImagine%>" style="width:50px;height: 50px;" alt="imagine"></td>
+						<td><%= useri[i].username %></td>
+						<td><%= useri[i].problema_vedere %></td>
+						<td>
+							<form id="sterge" method="post" action="/sterge_poza">
+								<label>
+									<input type="hidden" name="id_utiliz" value="<%-useri[i].id%>">
+								</label>
+								
+								<input type="submit" value="Șterge" class="btn btn-secondary">
+							</form>
+						</td>
+					</tr> 
+					<% } %>			
+			<% } %>
+		</tbody>
+		</table>
+	</div>
+</main>
+
+
+    <%- include("../fragmente/footer") %>
+
+</body>
+</html>

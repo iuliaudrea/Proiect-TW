@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cofetaria Dulcelind - utilizatori.">
+        <meta name="keywords" content="cofetarie, Dulcelind, utilizatori">
+        <link rel="stylesheet" href="/resurse/css/useri.css" type="text/css" />
+        <title>Gaudeamus | Utilizatori</title>
+        <%- include("../fragmente/head") %>     
+        <script type="text/javascript" src=/resurse/js/produse.js></script>
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+    <div>
+        <h2>Useri</h2>
+
+		<table class="table table-hover" id="prod_admin">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Poza</th>
+                    <th>Titlu</th>
+                    <th>Autor</th>
+                    <th>Șterge</th>
+                </tr>
+            </thead>
+
+		    <tbody>
+                    <% for (var i = 0; i < produse.length; i++) { %>
+                        <tr>
+                            <td><%-produse[i].id%></td>
+                            <td><%-produse[i].imagine%></td>
+                            <td><%-produse[i].titlu%></td>
+                            <td><%-produse[i].autori%></td>
+                            <td><button>Sterge</button></td>
+                        </tr>
+                    <% } %>
+		    </tbody>
+		</table>
+	</div>
+</main>
+
+
+    <%- include("../fragmente/footer") %>
+
+</body>
+</html>

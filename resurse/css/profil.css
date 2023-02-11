@@ -1,0 +1,44 @@
+.profil img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.profil div.img_profil {
+    width: 35%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.profil div.info_profil {
+    width: 60%;
+}
+
+.profil section.date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} 
+
+#form_inreg {
+    margin: 0 !important;
+}
+
+@media screen and (max-width:650px) {
+    div.info_profil, .profil div.img_profil{
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    div.info_profil{
+        margin-top: 2rem;
+    }
+
+    .profil section.date {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}

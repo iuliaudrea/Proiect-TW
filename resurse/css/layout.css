@@ -25,7 +25,9 @@ header h1{
 
 
 body{
+    /* scroll-behavior: auto; */
     position: relative;
+    min-height: 100vh;
 
     --culoare-text: #000;
     --culoare-footer: #435360;
@@ -191,6 +193,7 @@ body {
     --culoare-text-pret: white;
     --culoare-bg-pret: #9F7F8D;
 
+    --culoare-text-meniu-highlight: #9F7F8D;
 }
 
 .dark .btn-secondary{
@@ -632,15 +635,24 @@ header div {
     box-shadow: rgb(255 255 255 / 40%) 0px 5px 15px;
 }
 
+#politici {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 footer{
-    height: 90px;
+    height: 100px;
     background-color: var(--culoare-footer);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     margin-top: 2rem;
+    position: absolute;
+    /* bottom: 0; */
+    width: 100%;
 }
 
 footer * {
@@ -697,7 +709,7 @@ video::cue{
     text-align: justify;
 }
 
-
+main{min-height: calc(100vh - 240px);}
 
 @media screen and (max-width:1500px) {
     #grid-pagina{
@@ -773,13 +785,16 @@ video::cue{
     color: var(--culoare-text);
     transform-origin: bottom left;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     border-radius: 2rem;
     box-shadow: var(--culoare-box-shadow) 0px 0px 10px;
-    opacity: 0.75;
     background-color: var(--culoare-bg-cookie-fin);
     transform: scale(1);
+}
+
+#banner img{
+    height: 40%;
 }
 
 #mesaj-cookies {

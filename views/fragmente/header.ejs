@@ -13,7 +13,34 @@
             <img id="logo" src="/resurse/imagini/logo3m-nobkg.png" alt="logo">
         <!-- </a> -->
     </div>
-    <!-- <div class="col-4"></div> -->
+    <div id="header_utiliz" class="col-3">
+        <% if(!locals.utilizator) { %>
+            <a href="/inregistrare" title="Înregistrare"><i class="fa-solid fa-user-plus fa-lg"></i></a>
+            
+            <form id="form_login"  method="post" class="date"  action="/login"  enctype="multipart/form-data">
+                <div>
+                <p>
+                    <label>
+                        Username:&emsp;<input class="form-control" type="text" name="username" value="" required pattern="[A-Za-z0-9]+">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Parola:&emsp;<input class="form-control" type="password" required  name="parola" value="">
+                    </label>
+                </p>
+                </div>
+                <p><input class="btn btn-secondary" type="submit" value="Logare"></p>
+            </form>
+
+            <p><%- locals.succesLogin%></p>
+        <% } else {%>
+            <a href="/logout" title="Logout">Ieșire <%-locals.utilizator.username%> <i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i></a>
+            <a href="/profil" title="Profil"><i class="fa-solid fa-user fa-lg"></i></a>
+            <a href="/cos-virtual" title="Cos"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+            <a href="/stergere_cont" title="Sterge cont"><i class="fa-solid fa-trash-can fa-lg"></i></a>
+        <% }  %>
+    </div>
 </header>
 
 <nav>
@@ -53,9 +80,6 @@
             </ul>
         </li>
         <li>
-            <a href="/edituri">Edituri</a>
-        </li>
-        <li>
             <a href="/despre">Despre</a>
             <ul>
                 <li><a href="/despre#poveste">poveste</a></li>
@@ -65,5 +89,14 @@
                 <li><a href="/despre#informatii">Informații</a></li>
             </ul>
         </li>
+        <% if(locals?.utilizator?.areDreptul?.(Drepturi.vizualizareUtilizatori)) { %>
+            <li><a href="">Administrare</a>
+                <ul>
+                    <li><a href="/useri">Useri</a></li>
+                    <li><a href="/admin_produse">Produse</a></li>
+                </ul>
+            </li>
+        <% } %>
+
     </ul>
 </nav>

@@ -28,6 +28,7 @@
 
 <link rel="stylesheet" href="/resurse/css/biblioteci/bootstrap-custom.css">
 <link rel="stylesheet" href="/resurse/css/layout.css">
+<link rel="stylesheet" href="/resurse/css/header.css">
 <link rel="stylesheet" href="/resurse/css/nav.css">
 <link rel="stylesheet" href="/resurse/css/nav-750.css" type="text/css" media="screen and (max-width:750px)"/>
 <link rel="stylesheet" href="/resurse/css/printare.css">
@@ -45,3 +46,11 @@
 <script src="/resurse/js/cookies.js"></script>
 <script src="/resurse/js/meniu.js"></script>
 <script src="/resurse/js/accordion.js"></script>
+
+<% if(locals.utilizator && locals.utilizator.problema_vedere) { %>
+    <script>
+        window.addEventListener("DOMContentLoaded", function(){
+            document.getElementsByTagName("body")[0].style.fontSize = "20px";
+        })
+    </script>
+<% } %>

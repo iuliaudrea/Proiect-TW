@@ -1,22 +1,79 @@
 window.addEventListener("load", function(){
 
+    // preluare date cod virtual
+    // "cos_virtual": "3,1,10,4,1"
+    // pentru cantitate: "3|2,5|1"
+
+    // let iduriProduse = localStorage.getItem("cos_virtual");
+    // iduriProduse = iduriProduse?iduriProduse.split(","):[];
+
+    let dateProduse = localStorage.getItem("cos_virtual");
+    let elem = dateProduse? dateProduse.split(","):[];
+    iduriProduse = [];
+    cantProduse = [];
+    for(prod of elem){
+        if(prod){
+            iduriProduse.push(prod.split("|")[0])
+            cantProduse.push(prod.split("|")[1])
+        }
+    }
+
+    // for(let idp of iduriProduse){
+    for(let i=0; i < iduriProduse.length; i++){
+        let idp = iduriProduse[i];
+        let ch = document.querySelector(`[value='${idp}'].select-cos`);
+        let cant = document.getElementById(`cant${idp}`);
+
+        if(ch){
+            ch.checked = true;
+            cant.value = cantProduse[i]
+        }
+        else {
+            console.log("id cos virtual indexistent:", idp);
+        }
+    }
+
+
+    // adaugare date in cosul virtual
+    let checkboxuri = document.getElementsByClassName("select-cos");
+    let cantitati = document.getElementsByClassName("cant-cos");
+    cantProduse = []
+    for(let i=0; i<checkboxuri.length; i++){
+        let ch = checkboxuri[i];
+        ch.onchange = function(){
+            let cant = cantitati[i].value;
+            let dateProduse = localStorage.getItem("cos_virtual");
+            let elem = dateProduse? dateProduse.split(","):[];
+            iduriProduse = [];
+            cantProduse = [];
+            for(prod of elem){
+                if(prod){
+                    iduriProduse.push(prod.split("|")[0])
+                    cantProduse.push(prod.split("|")[1])
+                }
+            }
+            
+            if(this.checked){
+                iduriProduse.push(this.value);
+                cantProduse.push(cant)
+            }
+            else {
+                let poz = iduriProduse.indexOf(this.value);
+                if(poz != -1){
+                    iduriProduse.splice(poz,1);
+                }
+            }
+            console.log(cantProduse);
+            console.log(iduriProduse);
+            listaProd = []
+            for(let j=0; j<iduriProduse.length; j++){
+                listaProd.push(`${iduriProduse[j]}|${cantProduse[j]}`);
+            }
+            // console.log(listaProd.join(","))
+            localStorage.setItem("cos_virtual", listaProd.join(","));
+        }
+    }
     
-
-    document.getElementById("i_textarea").oninput = function() {
-        if(!this.value.toLowerCase().trim().match(new RegExp("^[a-zA-Z\- 0-9]*$"))) {
-            this.classList.add("is-invalid");
-        } else {
-            this.classList.remove("is-invalid");
-        }
-    }
-
-    document.getElementById("inp-nume").oninput = function() {
-        if(!this.value.toLowerCase().trim().match(new RegExp("^[a-zA-Z\- ]*$"))) {
-            this.classList.add("is-invalid");
-        } else {
-            this.classList.remove("is-invalid");
-        }
-    }
 
     // document.getElementById("filtrare").onclick = function(){
     function filtreaza() {
@@ -205,43 +262,31 @@ window.addEventListener("load", function(){
     }
 
 
-    // window.onkeydown = function(e){
-    //     console.log(e);
-    //     if(e.key == 'c' && e.altKey){
-    //         var produse = document.getElementsByClassName("produs");
-    //         let suma = 0;
-    //         for(let prod of produse) {
-    //             if(prod.style.display != "none")
-    //                 suma += parseFloat(prod.getElementsByClassName("val-pret")[0].innerHTML)
-    //         }
-    //         if(!document.getElementById("rezultat")) {
-    //             rezultat = document.createElement("p");
-    //             rezultat.id = "rezultat";
-    //             rezultat.innerHTML = "Pret total: " + suma;
-    //             // document.getElementById("produse").appendChild(rezultat);
-
-    //             var ps = document.getElementById("p-suma");
-    //             ps.parentNode.insertBefore(rezultat, ps.nextSibling);
-    //             rezultat.style.border = "1px solid purple"
-    //             rezultat.onclick = function() {
-    //                 this.remove();
-    //             }
-
-    //             setTimeout(function(){
-    //                 document.getElementById("rezultat").remove();
-    //             }, 2000);
-    //         }
-
-    //     }
-    // }
-
     // filtrare la schimbarea inputurilor
     // document.getElementById("filtrare").onclick  = filtreaza;
     // this.document.getElementById("inp-nume").onchange = filtreaza;
-    document.getElementById("inp-nume").oninput = filtreaza;
+    document.getElementById("i_textarea").oninput = function() {
+        filtreaza();
+        if(!this.value.toLowerCase().trim().match(new RegExp("^[a-zA-Z\- 0-9]*$"))) {
+            this.classList.add("is-invalid");
+        } else {
+            this.classList.remove("is-invalid");
+        }
+    }
+
+    document.getElementById("inp-nume").oninput = function() {
+        filtreaza();
+        if(!this.value.toLowerCase().trim().match(new RegExp("^[a-zA-Z\- ]*$"))) {
+            this.classList.add("is-invalid");
+        } else {
+            this.classList.remove("is-invalid");
+        }
+    }
+
+    // document.getElementById("inp-nume").oninput = filtreaza;
     document.getElementById("i_datalist").oninput = filtreaza;
     document.getElementById("inp-categorie").oninput = filtreaza;
-    document.getElementById("i_textarea").oninput = filtreaza;
+    // document.getElementById("i_textarea").oninput = filtreaza;
     document.getElementById("i_sel_multiplu").oninput = filtreaza;
     document.getElementById("inp-pret").oninput = function(){
         filtreaza();

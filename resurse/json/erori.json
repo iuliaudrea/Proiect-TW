@@ -1,5 +1,5 @@
 {
-    "cale_baza": "resurse/imagini/erori",
+    "cale_baza": "/resurse/imagini/erori",
     "eroare_default":{
         "titlu":"Eroare !!!",
         "text": "A survenit eroare.",
@@ -34,6 +34,14 @@
             "status":false,
             "titlu":"Eroare bază date",
             "text": "Încercați mai târziu!",
+            "imagine":"database.png"
+        },
+
+        {
+            "identificator":3,
+            "status":false,
+            "titlu":"Date greșite!",
+            "text": "Verificați datele",
             "imagine":"database.png"
         }
     ]

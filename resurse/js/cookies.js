@@ -65,11 +65,6 @@ window.addEventListener("load", function(){
         cale = window.location.pathname;
         val = `${titlu}*${poza}*${pret}*${cale}`;
 
-        // console.log(val);
-        // console.log(ultProd);
-        // console.log(penultProd);
-
-
         if(!ultProd || !penultProd) {
             setCookie("penultProd", val, 1);
             setCookie("ultProd", val, 1);

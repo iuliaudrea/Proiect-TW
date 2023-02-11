@@ -21,8 +21,6 @@ window.addEventListener("DOMContentLoaded", function() {
             }
 
             afis = !afis;
-            console.log(afis);
-            console.log(localStorage);
         });
     }
 
